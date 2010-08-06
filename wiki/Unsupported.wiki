@@ -13,3 +13,15 @@ Left curly braces in selectors are not supported. This will fail:
 {{{
 a:link[href~="abc{def"]
 }}}
+
+== Right curly brace in declaration value strings ==
+
+Right curly braces in declaration value strings are not supported. This will fail:
+
+{{{
+q
+	{
+	content: "abc}"
+	}
+
+}}}
