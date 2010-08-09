@@ -1,3 +1,14 @@
+== Multiple backslash escape chars following a escaped quote char ===
+
+This will fail:
+{{{
+a[href~="javascript:\\\""]
+		{
+		color:				blue;
+		text-decoration:	underline
+		}
+}}}
+
 == @font-face (CSS 2.0 / CSS 3.0 Fonts Module Level 3) ==
 
 The @font-face rule is not supported. Support is planned with version 2.0.1 of cssmin. See also: [http://www.w3.org/TR/css3-fonts/ CSS Fonts Module Level 3]
