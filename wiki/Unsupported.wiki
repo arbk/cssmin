@@ -40,7 +40,7 @@ a[href~="contains\\\""]
 
 == Backslash escaped newline in strings ==
 
-This will fail:
+Won't fail but the LF will not get removed:
 
 {{{
 abbr:after
