@@ -2,7 +2,7 @@
 
 This will fail:
 {{{
-test1337
+div
 	/* Comment 1 */
 	{
 	border /* Comment 2 */: 1px solid black;
