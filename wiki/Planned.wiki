@@ -1,6 +1,9 @@
 == Better compatibility to CSS 2.1 4.2 Rules for handling parsing errors ==
 See: [http://www.w3.org/TR/CSS2/syndata.html#parsing-errors CSS 2.1 4.2 Rules for handling parsing errors]
 
+== Comments between selector and ruleset and between declaration property and value ==
+See: [Unsupported]
+
 == Support for backslash escaped newline in strings ==
 See: [Unsupported]
 
