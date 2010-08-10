@@ -1,38 +1,40 @@
+== Backslash escaped quote chars in string property ==
+
+This will fail:
+{{{
+div
+	{
+	background-image: url(/images/my\"image.gif);
+	}
+}}}
+
+Enclosing the string part of the property into quotes will work:
+{{{
+div
+	{
+	background-image: url("/images/my\"image.gif");
+	}
+}}}
+
 == Multiple backslash escape chars following a escaped quote char ===
 
 This will fail:
 {{{
-a[href~="javascript:\\\""]
-		{
-		color:				blue;
-		text-decoration:	underline
-		}
-}}}
-
-== @font-face (CSS 2.0 / CSS 3.0 Fonts Module Level 3) ==
-
-The @font-face rule is not supported. Support is planned with version 2.0.1 of cssmin. See also: [http://www.w3.org/TR/css3-fonts/ CSS Fonts Module Level 3]
-
-== @page ==
-
-@page is not supported. See also: [http://www.w3.org/TR/CSS21/page.html#page-box 13.2 Page boxes: the @page rule].
-
-== Left curly brace in selectors strings ==
-
-Left curly braces in selectors are not supported. This will fail:
-
-{{{
-a:link[href~="abc{def"]
-}}}
-
-== Right curly brace in declaration value strings ==
-
-Right curly braces in declaration value strings are not supported. This will fail:
-
-{{{
-q
+a[href~="contains\\\""]
 	{
-	content: "abc}"
+	...
+	}
+}}}
+
+== Backslash escaped newline in strings ==
+
+This will fail:
+
+{{{
+abbr:after
+	{
+	content: "string with a\
+backslash escaped newline";
 	}
 
 }}}
