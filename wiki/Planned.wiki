@@ -1,0 +1,32 @@
+== Better compatibility to CSS 2.1 4.2 Rules for handling parsing errors ==
+See: [http://www.w3.org/TR/CSS2/syndata.html#parsing-errors CSS 2.1 4.2 Rules for handling parsing errors]
+
+== Support for backslash escaped newline in strings ==
+See: [Unsupported]
+
+== Support for backslash escaped quote chars in string property ==
+See: [Unsupported]
+
+== CSS translation for "opacity" ==
+{{{
+opacity: 0.5;
+-moz-opacity: 0.5;
+filter: alpha(opacity=50);
+}}}
+
+== CSS translation for "pre-wrap" ==
+{{{
+white-space:	pre-wrap;		/* CSS3 */
+white-space:	-moz-pre-wrap;		/* Mozilla */
+white-space:	-webkit-pre-wrap;	/* Webkit */
+white-space:	-khtml-pre-wrap;	/* khtml */
+white-space:	-pre-wrap;		/* Opera 4-6 */
+white-space:	-o-pre-wrap;		/* Opera 7+ */
+word-wrap:	break-word;		/* Internet Explorer 5.5+ */
+}}}
+
+== @import ==
+Really import the defined stylesheet into the minified stylesheet and remove the import rule (only optional; default to false).
+
+== !important ==
+The Tokenization should recognize the !important flag and extend the T_DECLARATIONS token.
