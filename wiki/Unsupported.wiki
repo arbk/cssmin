@@ -1,4 +1,3 @@
-#labels Featured
 == Backslash escaped quote chars in string property ==
 
 This will fail:
