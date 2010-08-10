@@ -1,3 +1,15 @@
+== Comments between selector and ruleset and between declaration property and value ==
+
+This will fail:
+{{{
+test1337
+	/* Comment 1 */
+	{
+	border /* Comment 2 */: 1px solid black;
+	}
+}}}
+Comments between selector and ruleset and between declaration property and value will get supported in version 2.0.2.
+
 == Backslash escaped quote chars in string property ==
 
 This will fail:
