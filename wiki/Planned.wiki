@@ -9,9 +9,12 @@ See: [Unsupported]
 
 == CSS translation for "opacity" ==
 {{{
-opacity: 0.5;
+opacity: 0.5;				/* Firefox, Safari(WebKit), Opera */
 -moz-opacity: 0.5;
-filter: alpha(opacity=50);
+-ms-filter: "alpha(opacity=50)";	/* IE 8 */
+filter: alpha(opacity=50);		/* IE 4-7 */
+zoom: 1;				/* set "zoom", "width" or "height" to trigger "hasLayout" in IE 7 and lower */ 
+
 }}}
 
 == CSS translation for "pre-wrap" ==
