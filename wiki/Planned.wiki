@@ -1,35 +1,8 @@
 == Better compatibility to CSS 2.1 4.2 Rules for handling parsing errors ==
 See: [http://www.w3.org/TR/CSS2/syndata.html#parsing-errors CSS 2.1 4.2 Rules for handling parsing errors]
 
-== Comments between selector and ruleset and between declaration property and value ==
-See: [KnownIssues]
-
-== Support for backslash escaped newline in strings ==
-See: [KnownIssues]
-
 == Support for backslash escaped quote chars in string property ==
 See: [KnownIssues]
-
-== CSS translation for "opacity" ==
-{{{
-opacity: 0.5;				/* Firefox, Safari(WebKit), Opera */
--moz-opacity: 0.5;
--ms-filter: "alpha(opacity=50)";	/* IE 8 */
-filter: alpha(opacity=50);		/* IE 4-7 */
-zoom: 1;				/* set "zoom", "width" or "height" to trigger "hasLayout" in IE 7 and lower */ 
-
-}}}
-
-== CSS translation for "pre-wrap" ==
-{{{
-white-space:	pre-wrap;		/* CSS3 */
-white-space:	-moz-pre-wrap;		/* Mozilla */
-white-space:	-webkit-pre-wrap;	/* Webkit */
-white-space:	-khtml-pre-wrap;	/* khtml */
-white-space:	-pre-wrap;		/* Opera 4-6 */
-white-space:	-o-pre-wrap;		/* Opera 7+ */
-word-wrap:	break-word;		/* Internet Explorer 5.5+ */
-}}}
 
 == @import ==
 Really import the defined stylesheet into the minified stylesheet and remove the import rule (only optional; default to false).
