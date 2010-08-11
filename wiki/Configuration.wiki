@@ -2,44 +2,105 @@
 == remove-empty-blocks ==
 Empty @media, @font-face and @page blocks will get removed.
 
-Defaults to: `true`
+=== Example ===
+{{{
+@media print { }
+}}}
+{{{
+null
+}}}
+=== Defaults to: `true` ===
 
-= remove-empty-rulesets =
+
+== remove-empty-rulesets ==
 Empty rulesets will get removed.
+=== Example ===
+{{{
+div { }
+}}}
+{{{
+null
+}}}
+=== Defaults to: `true` ===
 
-Defaults to: `true`
+== remove-last-ruleset-semicolon ==
+The last semicolon of a declaration of a ruleset or @font-face or @page block will get removed.
+=== Example ===
+{{{
+div
+	{
+	color: black;
+	width: 100%;
+	}
+}}}
+{{{
+div{color:black;width:100%}
+}}}
+=== Defaults to: `true` ===
 
-= remove-last-ruleset-semicolon =
-The last semicolon of a ruleset will get removed.
-
-Defaults to: `true`
-
-= convert-css3-properties =
+== convert-css3-properties ==
 CSS3 properties will get translated to their browser specific counterparts.
-`div {border-radius: 1em;}`
-will get converted to:
-`div {-moz-border-radius: 1em; -webkit-border-radius: 1em; -khtml-border-radius: 1em; border-radius: 1em;}`
 
-Supported are: border-radius, border-top-left-radius, border-top-right-radius, border-bottom-right-radius, border-bottom-left-radius, box-shadow, opacity and text-shadow.
+Supported are: 
+ * border-radius
+ * border-top-left-radius
+ * border-top-right-radius
+ * border-bottom-right-radius
+ * border-bottom-left-radius
+ * box-shadow
+ * opacity
+ * text-shadow
+ * white-space: pre-wrap
 
-Defaults to: `true`
+=== Example ===
+{{{
+div {border-radius: 1em;}
+}}}
+{{{
+div{-moz-border-radius:1em;-webkit-border-radius:1em;-khtml-border-radius:1em;border-radius:1em;}
+}}}
+=== Defaults to: `true` ===
 
-= convert-color-values =
-Convert RGB color values to hex: `rgb(200,60%,5)` will get converted to `#c89905`
 
-Defaults to: `false`
+== convert-color-values ==
+Convert RGB color values to hex: 
 
-= compress-color-values =
-If set to `true` hex colors will get compressed: `#aabbcc` will get compressed to `#abc`.
+=== Example ===
+{{{
+rgb(200,60%,5)
+}}}
+{{{
+#c89905
+}}}
+=== Defaults to: `false` ===
 
-Defaults to: `false`
+== compress-color-values ==
+If set to `true` hex colors will get compressed.
+=== Example ===
+{{{
+#aabbcc
+}}}
+{{{
+#abc
+}}}
+=== Defaults to: `false` ===
 
-= compress-unit-values =
-If set to `true` unit values will get compressed. For example `0px` will get compressed to `0`, `0.5px` to `.5px` and `0 0 0 0` to `0`.
+== compress-unit-values ==
+If set to `true` unit values will get compressed.
+=== Example ===
+{{{
+0px
+0.5px
+0 0 0 0
+}}}
+{{{
+0
+.5px
+0
+}}}
+=== Defaults to: `false` ===
 
-Defaults to: `false`
 
-= emulate-css3-variables =
+== emulate-css3-variables ==
 See: [http://disruptive-innovations.com/zoo/cssvariables/ CSS Variables]
-
-Defaults to: `true`
+=== Defaults to: `true` ===
