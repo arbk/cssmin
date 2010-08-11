@@ -1,15 +1,3 @@
-== Comments between selector and ruleset and between declaration property and value ==
-
-This will fail:
-{{{
-div
-	/* Comment 1 */
-	{
-	border /* Comment 2 */: 1px solid black;
-	}
-}}}
-Comments between selector and ruleset and between declaration property and value will get supported in version 2.0.2.
-
 == Quote chars in url() property ==
 
 This will fail:
@@ -36,17 +24,4 @@ a[href~="contains\\\""]
 	{
 	...
 	}
-}}}
-
-== Backslash escaped newline in strings ==
-
-Won't fail but the LF will not get removed:
-
-{{{
-abbr:after
-	{
-	content: "string with a\
-backslash escaped newline";
-	}
-
 }}}
