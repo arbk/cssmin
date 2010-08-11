@@ -1,11 +1,10 @@
 == Better compatibility to CSS 2.1 4.2 Rules for handling parsing errors ==
 See: [http://www.w3.org/TR/CSS2/syndata.html#parsing-errors CSS 2.1 4.2 Rules for handling parsing errors]
 
-== Support for backslash escaped quote chars in string property ==
-See: [KnownIssues]
+== Enhance support for at-rule @import ==
+The tokenizer should parse source and media types and store that values in the new token T_AT_IMPORT. 
 
-== @import ==
-Really import the defined stylesheet into the minified stylesheet and remove the import rule (only optional; default to false).
+Conceivable is the option to really import the source into the currently parsed css. This will require an additional configuration parameter defines the base path of the current css. Otherwise theres no way to convert any relative web path to an absolute filesystem path. This option should defaults to false.
 
 == !important ==
 The Tokenization should recognize the !important flag and extend the T_DECLARATIONS token.
