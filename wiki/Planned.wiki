@@ -2,13 +2,13 @@
 See: [http://www.w3.org/TR/CSS2/syndata.html#parsing-errors CSS 2.1 4.2 Rules for handling parsing errors]
 
 == Comments between selector and ruleset and between declaration property and value ==
-See: [Unsupported]
+See: [KnownIssues]
 
 == Support for backslash escaped newline in strings ==
-See: [Unsupported]
+See: [KnownIssues]
 
 == Support for backslash escaped quote chars in string property ==
-See: [Unsupported]
+See: [KnownIssues]
 
 == CSS translation for "opacity" ==
 {{{
