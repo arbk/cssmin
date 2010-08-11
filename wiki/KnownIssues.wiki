@@ -16,7 +16,7 @@ This will fail:
 {{{
 div
 	{
-	background-image: url(/images/my\"image.gif);
+	background-image: url(/images/john's-house.gif);
 	}
 }}}
 
@@ -24,7 +24,7 @@ Enclosing the string part of the property into quotes will work:
 {{{
 div
 	{
-	background-image: url("/images/my\"image.gif");
+	background-image: url("/images/john's-house.gif");
 	}
 }}}
 
