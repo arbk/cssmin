@@ -10,7 +10,7 @@ div
 }}}
 Comments between selector and ruleset and between declaration property and value will get supported in version 2.0.2.
 
-== Backslash escaped quote chars in string property ==
+== Quote chars in url() property ==
 
 This will fail:
 {{{
