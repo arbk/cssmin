@@ -10,7 +10,7 @@ Empty @media, @font-face and @page blocks will get removed.
 null
 }}}
 === Defaults to: `true` ===
-
+----
 
 == remove-empty-rulesets ==
 Empty rulesets will get removed.
@@ -22,6 +22,7 @@ div { }
 null
 }}}
 === Defaults to: `true` ===
+----
 
 == remove-last-ruleset-semicolon ==
 The last semicolon of a declaration of a ruleset or @font-face or @page block will get removed.
@@ -37,6 +38,7 @@ div
 div{color:black;width:100%}
 }}}
 === Defaults to: `true` ===
+----
 
 == convert-css3-properties ==
 CSS3 properties will get translated to their browser specific counterparts.
@@ -60,7 +62,7 @@ div {border-radius: 1em;}
 div{-moz-border-radius:1em;-webkit-border-radius:1em;-khtml-border-radius:1em;border-radius:1em;}
 }}}
 === Defaults to: `true` ===
-
+----
 
 == convert-color-values ==
 Convert RGB color values to hex: 
@@ -73,6 +75,7 @@ rgb(200,60%,5)
 #c89905
 }}}
 === Defaults to: `false` ===
+----
 
 == compress-color-values ==
 If set to `true` hex colors will get compressed.
@@ -84,6 +87,7 @@ If set to `true` hex colors will get compressed.
 #abc
 }}}
 === Defaults to: `false` ===
+----
 
 == compress-unit-values ==
 If set to `true` unit values will get compressed.
@@ -99,8 +103,9 @@ If set to `true` unit values will get compressed.
 0
 }}}
 === Defaults to: `false` ===
-
+----
 
 == emulate-css3-variables ==
 See: [http://disruptive-innovations.com/zoo/cssvariables/ CSS Variables]
 === Defaults to: `true` ===
+----
