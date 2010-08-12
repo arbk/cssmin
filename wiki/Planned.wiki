@@ -2,6 +2,9 @@
 == Better compatibility to CSS 2.1 4.2 Rules for handling parsing errors ==
 See: [http://www.w3.org/TR/CSS2/syndata.html#parsing-errors CSS 2.1 4.2 Rules for handling parsing errors]
 
+== Reduce memory usage ==
+The minification option "compress-unit-values" uses 80% of the memory.
+
 == Enhance support for at-rule @import ==
 The tokenizer should parse source and media types and store that values in the new token T_AT_IMPORT. 
 
