@@ -3,7 +3,7 @@
 See: [http://www.w3.org/TR/CSS2/syndata.html#parsing-errors CSS 2.1 4.2 Rules for handling parsing errors]
 
 == Reduce memory usage ==
-The minification option "compress-unit-values" uses 80% of the memory.
+The minification option "compress-unit-values" uses 80% of the memory. The memory usage maybe a result of the PCRE cache. See: http://bugs.php.net/35258)
 
 == Enhance support for at-rule @import ==
 The tokenizer should parse source and media types and store that values in the new token T_AT_IMPORT. 
