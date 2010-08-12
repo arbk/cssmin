@@ -1,5 +1,5 @@
 #labels Featured
-Version 2.0.1.001; minification with all options turned on (`*`):
+Version 2.0.1.003; minification with all options turned on (`*`):
 
 || Size of css || (integer) 1132758 || 1.08 MB ||
 || Count of tokens || (integer) 71486 ||  ||
