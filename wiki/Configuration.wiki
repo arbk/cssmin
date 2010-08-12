@@ -61,7 +61,7 @@ div {border-radius: 1em;}
 {{{
 div{-moz-border-radius:1em;-webkit-border-radius:1em;-khtml-border-radius:1em;border-radius:1em;}
 }}}
-=== Defaults to: `true` ===
+=== Defaults to: `false` ===
 ----
 
 == convert-color-values ==
