@@ -2,6 +2,9 @@
 == Better compatibility to CSS 2.1 4.2 Rules for handling parsing errors ==
 See: [http://www.w3.org/TR/CSS2/syndata.html#parsing-errors CSS 2.1 4.2 Rules for handling parsing errors]
 
+== Compress 2 matching pairs of horizontal and vertical units to 1 pair ==
+Declarations like `padding: 2px 5px 2px 5px;` should get compressed to `padding: 2px 5px;`.
+
 == Enhance support for at-rule @import ==
 The tokenizer should parse source and media types and store that values in the new token T_AT_IMPORT. 
 
