@@ -1,3 +1,4 @@
+#labels Featured
 = Configuration =
 == remove-empty-blocks ==
 Empty @media, @font-face and @page blocks will get removed.
