@@ -1,0 +1,9 @@
+#labels Featured
+Version 2.0.1.001; minification with all options turned on (`*`):
+
+|| Size of css || (integer) 1132758 || 1.08 MB ||
+|| Count of tokens || (integer) 71486 ||  ||
+|| Memory usage: || (integer) 29884416 || 28.5 MB ||
+|| Duration: || (float) 4313,074 || 4.3 seconds ||
+
+_ `*` Tested on an Intel Core 2 Duo 2.66 with 4GB Ram_
