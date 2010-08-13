@@ -25,7 +25,7 @@ null
 === Defaults to: `true` ===
 ----
 
-== remove-last-ruleset-semicolon ==
+== remove-last-semicolons ==
 The last semicolon of a declaration of a ruleset or @font-face or @page block will get removed.
 === Example ===
 {{{
