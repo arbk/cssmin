@@ -151,6 +151,6 @@ If set to `true` unit values will get compressed.
 ----
 
 == emulate-css3-variables ==
-See: [http://disruptive-innovations.com/zoo/cssvariables/ CSS Variables]
+See: [ConfigurationEmulateCss3Variables Configuration: emulate-css3-variables]
 === Defaults to: `true` ===
 ----
