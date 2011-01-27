@@ -96,6 +96,20 @@ border: 1px solid f00
 === Defaults to: `false` ===
 ----
 
+== convert-hsl-color-values (new in v2.0.2) ==
+Convert HSL color values to hexadecimal notation: 
+
+=== Example ===
+{{{
+hsl(232,36%,48%)
+}}}
+{{{
+#4e5aa7
+}}}
+=== Defaults to: `false` ===
+----
+
+
 == convert-rgb-color-values (new in v2.0.2) ==
 Convert RGB color values to hexadecimal notation: 
 
