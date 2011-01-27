@@ -17,6 +17,11 @@ New configuration option "convert-font-weight-values".
 
 The font weight values "normal" and "bold" get converted to "400" and "700" 
 
+== Conversion of HSL color values ==
+
+New configuration option "convert-hsl-color-values". HSL color values will get converted to hexadecimal notation. So `hsl(232,36%,48%)` will get converted to `#4e5aa7`.
+
+
 == convert-css3-properties ==
 
 Supports now: 
