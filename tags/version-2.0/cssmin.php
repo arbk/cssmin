@@ -16,7 +16,7 @@
  * @author		Joe Scylla <joe.scylla@gmail.com>
  * @copyright	2008 - 2011 Joe Scylla <joe.scylla@gmail.com>
  * @license		http://opensource.org/licenses/mit-license.php MIT License
- * @version		2.0.2 (2011-02-17)
+ * @version		2.0.2.1 (2011-02-18)
  */
 class CssMin
 	{
@@ -187,13 +187,19 @@ class CssMin
 	 * 
 	 * @var integer
 	 */
-	const T_STRING = 254;
+	const T_STRING = 253;
 	/**
 	 * State: Is in url string property
 	 * 
 	 * @var integer
 	 */
-	const T_STRING_URL = 255;
+	const T_STRING_URL = 254;
+	/**
+	 * State: Is in expression string property
+	 * 
+	 * @var integer
+	 */
+	const T_STRING_EXPRESSION = 255;
 	/**
 	 * Default configuration.
 	 * 
@@ -592,7 +598,10 @@ class CssMin
 		{
 		$tokens = self::parse($css);
 		// Normalize configuration parameters
-		$config = array_combine(array_map("trim", array_map("strtolower", array_keys($config))), array_values($config));
+		if (count($config) > 0)
+			{
+			$config = array_combine(array_map("trim", array_map("strtolower", array_keys($config))), array_values($config));
+			}
 		$config = array_merge(self::$defaultConfiguration, $config);
 		// Minification options/variables
 		$sRemoveEmptyBlocks				= $config["remove-empty-blocks"];
@@ -1250,9 +1259,26 @@ class CssMin
 					$stringChar = null;
 					}
 				/**
+				 * Start of expression string property
+				 */
+				elseif ($c == "(" && ($currentState != self::T_COMMENT && $currentState != self::T_STRING && $currentState != self::T_STRING_URL) && strtolower(substr($css, $i - 10, 10) == "expression") 
+					&& ($currentState == self::T_DECLARATION || $currentState == self::T_FONT_FACE_DECLARATION || $currentState == self::T_PAGE_DECLARATION || $currentState == self::T_VARIABLE_DECLARATION))
+					{
+					array_push($state, self::T_STRING_EXPRESSION);
+					}
+				/**
+				 * End of expression string property
+				 */
+				elseif (($c == ";" || $c == "}") && $p == ")" && $currentState == self::T_STRING_EXPRESSION)
+					{
+					$buffer = substr($buffer, 0, -2);
+					array_pop($state);
+					$i = $i - 2;
+					}
+				/**
 				 * Start of url string property
 				 */
-				elseif ($c == "(" && ($currentState != self::T_COMMENT && $currentState != self::T_STRING) && strtolower(substr($css, $i - 3, 3) == "url") 
+				elseif ($c == "(" && ($currentState != self::T_COMMENT && $currentState != self::T_STRING && $currentState != self::T_STRING_EXPRESSION) && strtolower(substr($css, $i - 3, 3) == "url") 
 					&& ($currentState == self::T_DECLARATION || $currentState == self::T_FONT_FACE_DECLARATION || $currentState == self::T_PAGE_DECLARATION || $currentState == self::T_VARIABLE_DECLARATION || $currentState == self::T_AT_IMPORT))
 					{
 					array_push($state, self::T_STRING_URL);
@@ -1260,7 +1286,7 @@ class CssMin
 				/**
 				 * End of url string property
 				 */
-				elseif (($c == ")" || $c == "\n") && ($currentState != self::T_COMMENT && $currentState != self::T_STRING) && $currentState == self::T_STRING_URL)
+				elseif (($c == ")" || $c == "\n") && $currentState == self::T_STRING_URL)
 					{
 					if ($p == "\\")
 						{
@@ -1575,6 +1601,11 @@ class CssMin
 				 */
 				elseif ($c == ":" && $currentState == self::T_DECLARATION)
 					{
+					// Fix for Internet Explorer declaration filter as the declaration value conrains a colon (Ex.: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);)
+					if (strtolower($property) == "filter" && strtolower(trim($buffer)) == "progid:")
+						{
+						continue;
+						}
 					$errorStart	= strrpos($css, "\n", -($l - strrpos($css, ":", -($l - $i + 2))));
 					$errorEnd	= strpos($css, "\n", $errorStart + 1);
 					$errorLine	= trim(substr($css, $errorStart, $errorEnd - $errorStart));
