@@ -523,8 +523,6 @@ class CssMin
 		"outline-bottom-right-radius"	=> array("-moz-outline-radius-bottomright", null, null, null),
 		"outline-top-left-radius"		=> array("-moz-outline-radius-topleft", null, null, null),
 		"outline-top-right-radius"		=> array("-moz-outline-radius-topright", null, null, null),
-		"overflow-x"					=> array(null, null, null, "-ms-overflow-x"),
-		"overflow-y"					=> array(null, null, null, "-ms-overflow-y"),
 		"padding-after"					=> array(null, "-webkit-padding-after", null, null),
 		"padding-before"				=> array(null, "-webkit-padding-before", null, null),
 		"padding-end"					=> array("-moz-padding-end", "-webkit-padding-end", null, null),
