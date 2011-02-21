@@ -1,0 +1,45 @@
+= Whats new in Version 3.0 =
+
+== OOP ==
+!CssMin version 3 is a object orientated implementation of version 2. This fixes the major problem (at least for me) 
+of version 2: the maintainability. Also version 3 should be less error-prone and has a much better expandability.
+
+=== But there is always a price to pay ===
+While the parser have the same speed as in version 2 the memory usage will be higher and the minification is ca. 20% 
+slower (revision #92; with all configuration options turned on).
+
+=== Fiters and plugins ===
+The parser uses plugins to capsules the parsing logic for different tokens of a stylesheet and the minifier is using 
+filters for pre-procession the array of tokens delivered by the parser and plugins for procession of single tokens.
+
+=== Source and build version ===
+The build version is a single file containing every php file of the source as minified version. The source version 
+includes a autoload method that will get registered via [http://www.php.net/manual/en/function.spl-autoload-register.php spl_autoload_register]
+
+== Variables now can get used as part of a declaration value ==
+
+{{{
+@variables
+	{
+	/* Variable declaration */
+	myVar: black;
+	}
+div.Test2
+	{
+	/* Variable used as part of a declaration value */
+	border: 1px solid var(myVar);
+	}
+}}}
+
+== Parser for expression() declaration values ==
+
+expresssion() declaration values will get parsed property even if the expression includes curly braces and semicolons.
+Additional if [https://github.com/rgrove/jsmin-php/ JSMin] is defined the expression will get compressed using 
+[https://github.com/rgrove/jsmin-php/ JSMin].
+
+== Formatters ==
+For debugging purposes two formatter are included. The formatter will output a array of tokens with correct indentation
+(and a optional declaration value padding). The formatters are:
+ * [http://en.wikipedia.org/wiki/Indent_style#Variant:_1TBS OTBS (aka. 1TBS)] indent style
+ * [http://en.wikipedia.org/wiki/Indent_style#Whitesmiths_style Whitesmiths] indent style
+ 
