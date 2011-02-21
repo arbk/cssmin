@@ -164,6 +164,34 @@ If set to `true` unit values will get compressed.
 === Defaults to: `false` ===
 ----
 
+== import-imports ==
+If set to `true` stylesheets included with the at-rule @import will get parsed and inserted into the current stylesheet. Imported stylesheets are allowed to have their own @import at-rules.
+
+You have to set the configuration option `import-base-path` to a valid path. All paths defined in @import at-rules will get interpreted based on this base path.
+
+If there are media type defined in the @import at-rule there will be alot of processing to match the browsers behavior.
+
+1. The imported tokens wil get wrapped into a @media at-rule block. @font-face, @media and @page at-rule blocks and other at-rule statements will get excluded of the wraping.
+
+2. Additional @media at-rule blocks with media types not defined in the @import at-rule have to get removed. Browsers ignore @media at-rule block with media types incompatible to the media types defined in the @import at-rule.
+
+3. Also @import rules require special treatment. If a included @import at-rule has no media type or only the "all" media type defined the media type of the @import at-rule will get set to the ones defined in the parent @import at-rule. Media types not defined in the parent @import at-rule will get filtered. @import at-rule with not matching media types will get removed.
+
+4. If a @media at-rule block is defined the same media type as the @import at-rule the @media at-rule block will get removed preserving the rulesets.
+
+=== Defaults to: `false` ===
+----
+
+== import-base-path ==
+Its required to set this setting for the configuration option `import-imports`. All paths defined in @import at-rules will get interpreted based on this base path.
+=== Defaults to: `null` ===
+----
+
+== import-remove-invalid ==
+If set to `true` (and `import-imports` is set to `true`) every @import at-rule will get removed if import stylesheet was not found.
+=== Defaults to: `false` ===
+----
+
 == emulate-css3-variables ==
 See: [ConfigurationEmulateCss3Variables Configuration: emulate-css3-variables]
 === Defaults to: `true` ===
