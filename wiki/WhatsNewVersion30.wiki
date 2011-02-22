@@ -37,9 +37,9 @@ $filters = array
 	"RemoveComments"			=> true, 
 	"RemoveEmptyRulesets"			=> true,
 	"RemoveEmptyAtBlocks"			=> true,
-	"RemoveLastDelarationSemiColon"		=> true,
 	"ConvertLevel3Properties"		=> true,
-	"Variables"				=> true
+	"Variables"				=> true,
+	"RemoveLastDelarationSemiColon"		=> true // Required to run as last filter
 	);
 $plugins = array
 	(
@@ -63,9 +63,9 @@ $filters = array
 	"RemoveComments"			=> true, 
 	"RemoveEmptyRulesets"			=> true,
 	"RemoveEmptyAtBlocks"			=> true,
-	"RemoveLastDelarationSemiColon"		=> true,
 	"ConvertLevel3Properties"		=> false,
-	"Variables"				=> true
+	"Variables"				=> true,
+	"RemoveLastDelarationSemiColon"		=> true // Required to run as last filter
 	);
 $plugins = array
 	(
