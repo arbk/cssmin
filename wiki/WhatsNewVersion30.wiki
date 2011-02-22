@@ -9,10 +9,16 @@ The syntax of the minifier configuration was changed. See: [WhatsNewVersion30#Ne
 of version 2: the maintainability. Also version 3 should be less error-prone and has a much better expandability.
 
 === But there is always a price to pay ===
-While the parser have the same speed as in version 2 the memory usage will be higher and the minification is ca. 20% slower (revision #92; with all configuration options turned on).
+While the parser have the same speed as in version 2 the memory usage will be higher and the minification is ca. 20% 
+slower (with all configuration options turned on).
 
-=== Fiters and plugins ===
-The parser uses plugins to capsules the parsing logic for different tokens of a stylesheet and the minifier is using filters for pre-procession the array of tokens delivered by the parser and plugins for procession of single tokens.
+=== Filters and plugins ===
+Parser plugins encapsules the parse logic for different elements of the stylesheet. Parser plugins are using the parser 
+methods to change the parser state, buffer, etc. and return values for flow control of the parser process. 
+
+Minifier filter are used for pre-processing the array of tokens returned by the parser while minifier plugins getting 
+called on every token of the array of token returned by the parser. Minifier filters are able to insert, edit and remove 
+tokens; minifier plugins not. Both are using return values for flow control of the minification process.
 
 === Source and build version ===
 The build version is a single file containing every php file of the source as minified version. The source version includes a autoload method that will get registered via [http://www.php.net/manual/en/function.spl-autoload-register.php spl_autoload_register]
