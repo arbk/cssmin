@@ -2,11 +2,5 @@
 == Better compatibility to CSS 2.1 4.2 Rules for handling parsing errors ==
 See: [http://www.w3.org/TR/CSS2/syndata.html#parsing-errors CSS 2.1 4.2 Rules for handling parsing errors]
 
-== Error reporting ==
-Parse errors should be reported in some unobtrusive way.
-
 == Compress 2 matching pairs of horizontal and vertical units to 1 pair ==
 Declarations like `padding: 2px 5px 2px 5px;` should get compressed to `padding: 2px 5px;`.
-
-== !important ==
-The Tokenization should recognize the !important flag and extend the T_DECLARATIONS token.
