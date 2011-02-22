@@ -1,20 +1,78 @@
 = Whats new in Version 3.0 =
 
+== Compatibility changes to Version 2.0.2 ==
+
+The syntax of the minifier configuration was changed.
+
 == OOP ==
 !CssMin version 3 is a object orientated implementation of version 2. This fixes the major problem (at least for me) 
 of version 2: the maintainability. Also version 3 should be less error-prone and has a much better expandability.
 
 === But there is always a price to pay ===
-While the parser have the same speed as in version 2 the memory usage will be higher and the minification is ca. 20% 
-slower (revision #92; with all configuration options turned on).
+While the parser have the same speed as in version 2 the memory usage will be higher and the minification is ca. 20% slower (revision #92; with all configuration options turned on).
 
 === Fiters and plugins ===
-The parser uses plugins to capsules the parsing logic for different tokens of a stylesheet and the minifier is using 
-filters for pre-procession the array of tokens delivered by the parser and plugins for procession of single tokens.
+The parser uses plugins to capsules the parsing logic for different tokens of a stylesheet and the minifier is using filters for pre-procession the array of tokens delivered by the parser and plugins for procession of single tokens.
 
 === Source and build version ===
-The build version is a single file containing every php file of the source as minified version. The source version 
-includes a autoload method that will get registered via [http://www.php.net/manual/en/function.spl-autoload-register.php spl_autoload_register]
+The build version is a single file containing every php file of the source as minified version. The source version includes a autoload method that will get registered via [http://www.php.net/manual/en/function.spl-autoload-register.php spl_autoload_register]
+
+== New configuration ==
+
+The configuration is now seperated into filter and plugin configuration. The configuration array uses the name of the 
+filter/plugin as key and if the value is set to `true` or an array the filter/plugin is enabled. If the value is set to `false`
+the filter/plugin is disabled.
+
+Example with all filters and plugins activated and configured:
+{{{
+$filters = array
+	(
+	"ImportImports"				=> array("BasePath" => "path/to/base/path"),
+	"RemoveComments"			=> true, 
+	"RemoveEmptyRulesets"			=> true,
+	"RemoveEmptyAtBlocks"			=> true,
+	"RemoveLastDelarationSemiColon"		=> true,
+	"ConvertLevel3Properties"		=> true,
+	"Variables"				=> true
+	);
+$plugins = array
+	(
+	"Variables"				=> true,
+	"ConvertFontWeight"			=> true,
+	"ConvertHslColors"			=> true,
+	"ConvertRgbColors"			=> true,
+	"ConvertNamedColors"			=> true,
+	"CompressColorValues"			=> true,
+	"CompressUnitValues"			=> true,
+	"CompressExpressionValues"		=> true
+	);
+$styles = CssMin::minify(file_get_contents("path/to/source.css"), $filters, $plugins);
+}}}
+
+The default configuration is:
+{{{
+$filters = array
+	(
+	"ImportImports"				=> false,
+	"RemoveComments"			=> true, 
+	"RemoveEmptyRulesets"			=> true,
+	"RemoveEmptyAtBlocks"			=> true,
+	"RemoveLastDelarationSemiColon"		=> true,
+	"ConvertLevel3Properties"		=> false,
+	"Variables"				=> true
+	);
+$plugins = array
+	(
+	"Variables"				=> true,
+	"ConvertFontWeight"			=> false,
+	"ConvertHslColors"			=> false,
+	"ConvertRgbColors"			=> false,
+	"ConvertNamedColors"			=> true,
+	"CompressColorValues"			=> true,
+	"CompressUnitValues"			=> true,
+	"CompressExpressionValues"		=> true
+	);
+}}}
 
 == Variables now can get used as part of a declaration value ==
 
@@ -42,4 +100,12 @@ For debugging purposes two formatter are included. The formatter will output a a
 (and a optional declaration value padding). The formatters are:
  * [http://en.wikipedia.org/wiki/Indent_style#Variant:_1TBS OTBS (aka. 1TBS)] indent style
  * [http://en.wikipedia.org/wiki/Indent_style#Whitesmiths_style Whitesmiths] indent style
- 
+
+Using the formatter:
+{{{
+$tokens = CssMin::parse(file_get_contents("path/to/source.css"));
+$formatter = new CssWhitesmithsFormatter($tokens, "    ", 32);
+echo "<pre>";
+echo $formatter;
+echo "</pre>
+}}}
