@@ -1,4 +1,6 @@
-= ImportImports =
+#sidebar TableOfContents
+
+= !ImportImports minifier filter =
 
 == Description ==
 This filter external stylesheets defined in @import at-rules will get parsed and inserted into the current stylesheet. 
