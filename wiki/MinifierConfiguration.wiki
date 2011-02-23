@@ -1,0 +1,164 @@
+= Minifier Configuration =
+
+== Syntax ==
+{{{
+string CssMin::minify(string $source [, array $filters = array()][, array $plugins = array()]);
+}}}
+
+=== string $source ===
+The source css as string.
+
+=== array $filters ===
+The filter configuration as array (optional). The configuration array must use the name of the filter as key and as 
+value `true`, `false` or an array with configuration parameters getting passed to the filter.
+
+*Example filter configuration (with all filters enabled and configured):*
+{{{
+$filters = array
+	(
+	"ImportImports"					=> array("BasePath" = "path/to/base"),
+	"RemoveComments"				=> true, 
+	"RemoveEmptyRulesets"			=> true,
+	"RemoveEmptyAtBlocks"			=> true,
+	"ConvertLevel3Properties"		=> true,
+	"Variables"						=> true,
+	"RemoveLastDelarationSemiColon"	=> true
+	);
+}}}
+
+*Default filter configuration:*
+{{{
+$filters = array
+	(
+	"ImportImports"					=> false,
+	"RemoveComments"				=> true, 
+	"RemoveEmptyRulesets"			=> true,
+	"RemoveEmptyAtBlocks"			=> true,
+	"ConvertLevel3Properties"		=> false,
+	"Variables"						=> true,
+	"RemoveLastDelarationSemiColon"	=> true
+	);
+}}}
+
+=== array $plugins ===
+The plugin configuration as array (optional). The configuration array must use the name of the plugin as key and as 
+value `true`, `false` or an array with configuration parameters getting passed to the plugin.
+
+*Example plugin configuration (with all plugins enabled and configured):*
+{{{
+$plugins = array
+	(
+	"Variables"						=> true,
+	"ConvertFontWeight"				=> true,
+	"ConvertHslColors"				=> true,
+	"ConvertRgbColors"				=> true,
+	"ConvertNamedColors"			=> true,
+	"CompressColorValues"			=> true,
+	"CompressUnitValues"			=> true,
+	"CompressExpressionValues"		=> true
+	);
+}}}
+
+*Default plugin configuration:*
+{{{
+$plugins = array
+	(
+	"Variables"						=> true,
+	"ConvertFontWeight"				=> false,
+	"ConvertHslColors"				=> false,
+	"ConvertRgbColors"				=> false,
+	"ConvertNamedColors"			=> false,
+	"CompressColorValues"			=> false,
+	"CompressUnitValues"			=> false,
+	"CompressExpressionValues"		=> false
+	);
+}}}
+
+== Minifier filters ==
+=== ImportImports ===
+This filter will import external css files defined in @import at-rules into the current stylesheet. To enable this
+filter you have to set a array value in the filter configuration array to define the base path. 
+
+{{{
+$filters = array
+	(
+	"ImportImports" => array("BasePath" = "path/to/base")
+	);
+}}}
+
+Every resource path of any @import at-rule will get interpreted based on the configured base path.
+
+=== RemoveComments ===
+This filter will remove any comments.
+
+*Before:*
+{{{
+/*
+ * This is a comment
+ */ 
+}}}
+*After:*
+{{{
+null
+}}}
+
+=== RemoveEmptyRulesets ===
+This filter will remove empty rulesets.
+
+*Before:*
+{{{
+div { }
+}}}
+*After:*
+{{{
+null
+}}}
+
+=== RemoveEmptyAtBlocks ===
+This filter will remove empty @font-face, @media and @page at-rule blocks. This filter should always run after any 
+filters removing tokens like the RemoveEmptyRulesets filter.
+*Configuration:*
+ * none
+ 
+*Before:*
+{{{
+@media print { }
+}}}
+*After:*
+{{{
+null
+}}}
+
+=== ConvertLevel3Properties ===
+@todo
+
+=== Variables ===
+@todo
+
+=== RemoveLastDelarationSemiColon ===
+@todo
+
+== Minifier plugins ==
+=== Variables ===
+@todo
+
+=== ConvertFontWeight ===
+@todo
+
+=== ConvertHslColors ===
+@todo
+
+=== ConvertRgbColors ===
+@todo
+
+=== ConvertNamedColors ===
+@todo
+
+=== CompressColorValues ===
+@todo
+
+=== CompressUnitValues ===
+@todo
+
+=== CompressExpressionValues ===
+@todo
