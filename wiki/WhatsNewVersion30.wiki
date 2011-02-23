@@ -3,7 +3,6 @@
 == Compatibility changes to Version 2.0.2 ==
 
  * The syntax of the minifier configuration was changed. See: [WhatsNewVersion30#New_configuration New configuration]
- * Requirement is now PHP 5.1.2+
 
 == OOP ==
 !CssMin version 3 is a object orientated implementation of version 2. This fixes the major problem (at least for me) 
@@ -74,10 +73,10 @@ $plugins = array
 	"ConvertFontWeight"			=> false,
 	"ConvertHslColors"			=> false,
 	"ConvertRgbColors"			=> false,
-	"ConvertNamedColors"			=> true,
-	"CompressColorValues"			=> true,
-	"CompressUnitValues"			=> true,
-	"CompressExpressionValues"		=> true
+	"ConvertNamedColors"			=> false,
+	"CompressColorValues"			=> false,
+	"CompressUnitValues"			=> false,
+	"CompressExpressionValues"		=> false
 	);
 }}}
 
