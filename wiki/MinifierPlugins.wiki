@@ -1,3 +1,5 @@
+#sidebar Sidebar
+
 = Minifier plugins =
 
  * [MinifierPluginVariables Variables]

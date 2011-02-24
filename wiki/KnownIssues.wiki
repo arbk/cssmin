@@ -1,3 +1,5 @@
+#sidebar Sidebar
+
 #labels Featured
 Hurray... no known issues. 
 

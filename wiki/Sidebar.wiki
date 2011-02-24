@@ -1,3 +1,5 @@
+ * [WhatsNewVersion30 What's new]
+ * [KnownIssues Known issues]
  * [MinifierConfiguration Minifer]
     * [MinifierFilters Filters]
        * [MinifierFilterImportImports ImportImports]
@@ -16,3 +18,7 @@
        * [MinifierPluginCompressUnitValues CompressUnitValues]
        * [MinifierPluginCompressExpressionValues CompressExpressionValues]
  * [ParserConfiguration Parser]
+    * [ParserPlugins Plugins]
+ * [Formatters Formatter]
+    * [OtbsFormatter OTBS (The One True Brace Style)]
+    * [WhitesmithsFormatter Whitesmiths]

@@ -1,8 +1,10 @@
+#sidebar Sidebar
+
 = Whats new in Version 3.0 =
 
 == Compatibility changes to Version 2.0.2 ==
 
- * The syntax of the minifier configuration was changed. See: [WhatsNewVersion30#New_configuration New configuration]
+ * The syntax of the minifier configuration was changed. See: [MinifierConfiguration Minifier configuration]
 
 == OOP ==
 !CssMin version 3 is a object orientated implementation of version 2. This fixes the major problem (at least for me) 
@@ -21,64 +23,8 @@ called on every token of the array of token returned by the parser. Minifier fil
 tokens; minifier plugins not. Both are using return values for flow control of the minification process.
 
 === Source and build version ===
-The build version is a single file containing every php file of the source as minified version. The source version includes a autoload method that will get registered via [http://www.php.net/manual/en/function.spl-autoload-register.php spl_autoload_register]
-
-== New configuration ==
-
-The configuration is now seperated into filter and plugin configuration. The configuration array uses the name of the 
-filter/plugin as key and if the value is set to `true` or an array the filter/plugin is enabled. If the value is set to `false`
-the filter/plugin is disabled.
-
-Example with all filters and plugins activated and configured:
-{{{
-$filters = array
-	(
-	"ImportImports"				=> array("BasePath" => "path/to/base/path"),
-	"RemoveComments"			=> true, 
-	"RemoveEmptyRulesets"			=> true,
-	"RemoveEmptyAtBlocks"			=> true,
-	"ConvertLevel3Properties"		=> true,
-	"Variables"				=> true,
-	"RemoveLastDelarationSemiColon"		=> true // Required to run as last filter
-	);
-$plugins = array
-	(
-	"Variables"				=> true,
-	"ConvertFontWeight"			=> true,
-	"ConvertHslColors"			=> true,
-	"ConvertRgbColors"			=> true,
-	"ConvertNamedColors"			=> true,
-	"CompressColorValues"			=> true,
-	"CompressUnitValues"			=> true,
-	"CompressExpressionValues"		=> true
-	);
-$styles = CssMin::minify(file_get_contents("path/to/source.css"), $filters, $plugins);
-}}}
-
-The default configuration is:
-{{{
-$filters = array
-	(
-	"ImportImports"				=> false,
-	"RemoveComments"			=> true, 
-	"RemoveEmptyRulesets"			=> true,
-	"RemoveEmptyAtBlocks"			=> true,
-	"ConvertLevel3Properties"		=> false,
-	"Variables"				=> true,
-	"RemoveLastDelarationSemiColon"		=> true // Required to run as last filter
-	);
-$plugins = array
-	(
-	"Variables"				=> true,
-	"ConvertFontWeight"			=> false,
-	"ConvertHslColors"			=> false,
-	"ConvertRgbColors"			=> false,
-	"ConvertNamedColors"			=> false,
-	"CompressColorValues"			=> false,
-	"CompressUnitValues"			=> false,
-	"CompressExpressionValues"		=> false
-	);
-}}}
+The build version is a single file containing every php file of the source as minified version. The source version 
+includes a autoload mechanism.
 
 == Variables now can get used as part of a declaration value ==
 

@@ -1,0 +1,6 @@
+#sidebar Sidebar
+
+= Formatter =
+
+ * [OtbsFormatter OTBS (The One True Brace Style)]
+ * [WhitesmithsFormatter Whitesmiths]
