@@ -1,7 +1,0 @@
-#labels Featured
-Version 2.0.1.0061; minification with all options turned on (`*`):
-
-|| *Source Size* || *Target Size* || *Tokens* || *Memory used* || *Duration* || 
-|| 1.08 MB || 0.91 MB / 82,5% || 71486 || 11.5 MB || 4.2 seconds ||
-
-_ `*` Tested on an Intel Core 2 Duo 2.66 with 4GB Ram_

@@ -1,4 +1,48 @@
 #sidebar Sidebar
 
 == _class_ CssMin ==
-coming soon...
+<wiki:toc max_depth="0" />
+----
+
+=== Constants ===
+_none_
+----
+
+=== Properties ===
+==== _private static_ `array` $classIndex = array()====
+Index of classes used for autoloading.
+----
+
+=== Methods ===
+==== `void` _public_ autoload(`string` $class) ====
+[http://goo.gl/JrW54 Autoload] function of CssMin.
+ * `string` $class : Name of the class
+ * *Returns:* `void`
+----
+
+==== `void` _public static_ build(`string` $target = "") ====
+Create a build version of CssMin.
+ * `type` $target : Path including file name were the build version should be saved (optional)
+ * *Returns:* `string` Build version as string
+----
+
+==== `void` _public static_ initialise() ====
+Initialises CssMin.
+ * *Returns:* `void`
+----
+
+==== `void` _public static_ minify(`string` $source, `array` $filters = `null`, `array` $plugins = `null`) ====
+Minifies CSS source.
+ * `string` $source : CSS source
+ * `array` $filters : Filter configuration
+ * `array` $plugins : Plugin configuration
+ * *Returns:* `string` Minified Css
+----
+
+==== `void` _public static_ parse(`string` $source) ====
+Parse the CSS source.
+Description
+ * `string` $source : CSS source
+ * `array` $plugins : Plugin configuration
+ * *Returns:* `array` Array of [ApiTokensACssToken aCssToken]
+----

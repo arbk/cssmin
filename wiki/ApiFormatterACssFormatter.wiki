@@ -1,6 +1,8 @@
 #sidebar Sidebar
 
 == _abstract class_ aCssFormatter ==
+----
+
 === Constants ===
 _none_
 ----
