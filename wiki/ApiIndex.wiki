@@ -1,0 +1,5 @@
+#sidebar Sidebar
+
+= API Documentation ==
+
+The api documentation is under constructing and will be ready in the next days.

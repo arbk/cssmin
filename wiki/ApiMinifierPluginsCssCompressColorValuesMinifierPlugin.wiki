@@ -1,0 +1,4 @@
+#sidebar Sidebar
+
+== _class_ CssCompressColorValuesMinifierPlugin _extends_ [ApiMinifierPluginsACssMinifierPlugin aCssMinifierPlugin] ==
+coming soon...

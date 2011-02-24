@@ -1,0 +1,4 @@
+#sidebar Sidebar
+
+== _class_ CssRemoveLastDelarationSemiColonMinifierFilter _extends_ [ApiMinifierFiltersACssMinifierFilter aCssMinifierFilter] ==
+coming soon...

@@ -1,0 +1,4 @@
+#sidebar Sidebar
+
+== _class_ CssConvertLevel3PropertiesMinifierFilter _extends_ [ApiMinifierFiltersACssMinifierFilter aCssMinifierFilter] ==
+coming soon...

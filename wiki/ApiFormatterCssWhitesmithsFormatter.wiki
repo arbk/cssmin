@@ -1,0 +1,4 @@
+#sidebar Sidebar
+
+== _class_ CssWhitesmithsFormatter _extends_ [ApiFormatterACssFormatter aCssFormatter] ==
+coming soon...

@@ -1,0 +1,4 @@
+#sidebar Sidebar
+
+== _abstract class_ aCssMinifierPlugin ==
+coming soon...

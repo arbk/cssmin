@@ -1,0 +1,41 @@
+#sidebar Sidebar
+
+== _class_ CssAtCharsetParserPlugin _extends_ [ApiParserPluginsACssParserPlugin aCssParserPlugin] ==
+This [ApiParserPluginsACssParserPlugin parser plugin] is parses @charset at-rules and will add
+[ApiTokensAtCharsetToken CssAtCharsetToken] to the parser.
+
+=== Constants ===
+ _none_
+
+=== Properties ===
+==== _protected_ `array` [ApiParserPluginsACssParserPlugin aCssParserPlugin]::$configuration = array() ====
+Plugin configuration.
+
+==== _protected_ [ApiParserCssParser CssParser] [ApiParserPluginsACssParserPlugin aCssParserPlugin]::$parser = `null` ====
+The instance of CssParser of the plugin.
+
+==== _protected_ `string` [ApiParserPluginsACssParserPlugin aCssParserPlugin]::$buffer = "" ====
+Buffer of the parser plugin.
+
+=== Methods ===
+==== `void` _public_ [ApiParserPluginsACssParserPlugin aCssParserPlugin]::__construct([ApiParserCssParser CssParser] $parser, `array` $configuration = `null`) ====
+Constructor of the parser plugin.
+ * [ApiParserCssParser CssParser] $parser : Instance of the css parser
+ * `array` $configuration : Configuration of the parser plugin (optional)
+ * *Returns:* `void`
+
+==== `string` _public_ getTriggerChars() ====
+ Returns the array of chars triggering the parser plugin.
+ * *Returns:* `array`
+
+==== `string` _public_ getTriggerStates() ====
+Returns the array of states triggering the parser plugin or FALSE if every state will trigger the parser plugin.
+ * *Returns:* `array`
+
+==== `mixed` _public_ parse(`integer` $index, `string` $char, `string` $previousChar, `string` $state) =====
+Parser routine of the plugin.
+ * `integer` $index : Current index
+ * `string` $char : Current char
+ * `string` $previousChar : Previous char
+ * `string` $state : Current state
+ * *Returns:* `mixed` TRUE will break the processing; FALSE continue with the next plugin; integer set a new index and break the processing 

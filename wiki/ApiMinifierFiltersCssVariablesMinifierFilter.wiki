@@ -1,0 +1,4 @@
+#sidebar Sidebar
+
+== _class_ CssVariablesMinifierFilter _extends_ [ApiMinifierFiltersACssMinifierFilter aCssMinifierFilter] ==
+coming soon...
