@@ -42,7 +42,7 @@ $filters = array
 	);
 }}}
 
-See: [MinifierFilters Minifier filters]
+See also: [MinifierFilters Minifier filters]
 
 === array $plugins ===
 The plugin configuration as array (optional). The configuration array must use the name of the plugin as key and as 
@@ -78,4 +78,16 @@ $plugins = array
 	);
 }}}
 
-See: [MinifierPlugins Minifier plugins]
+See also: [MinifierPlugins Minifier plugins]
+
+== Example ==
+{{{
+// Create configuration arrays (optional) 
+$filters = array(/*...*/);
+$plugins = array(/*...*/);
+// Minify via CssMin adapter function
+$result = CssMin::minify(file_get_contents("path/to/source.css"), $filters, $plugins);
+// Minify via CssMinifier class
+$minifier = new CssMinifier(file_get_contents("path/to/source.css"), $filters, $plugins);
+$result = $minifier->getMinified();
+}}}

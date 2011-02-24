@@ -1,6 +1,6 @@
 #sidebar Sidebar
 
-= AtPage parser plugin =
+= !AtPage parser plugin =
 
 == Description ==
 This plugin is responsible to parse @page at-rule blocks and containing declarations.

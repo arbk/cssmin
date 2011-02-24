@@ -1,6 +1,6 @@
 #sidebar Sidebar
 
-= AtCharset parser plugin =
+= !AtCharset parser plugin =
 
 == Description ==
 This plugin is responsible to parse @charset at-rules in the css source.
