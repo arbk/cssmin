@@ -16,12 +16,12 @@ value `true`, `false` or an array with configuration parameters getting passed t
 {{{
 $filters = array
 	(
-	"ImportImports"					=> array("BasePath" = "path/to/base"),
-	"RemoveComments"				=> true, 
-	"RemoveEmptyRulesets"			=> true,
-	"RemoveEmptyAtBlocks"			=> true,
-	"ConvertLevel3Properties"		=> true,
-	"Variables"						=> true,
+	"ImportImports"			=> array("BasePath" = "path/to/base"),
+	"RemoveComments"		=> true, 
+	"RemoveEmptyRulesets"		=> true,
+	"RemoveEmptyAtBlocks"		=> true,
+	"ConvertLevel3Properties"	=> true,
+	"Variables"			=> true,
 	"RemoveLastDelarationSemiColon"	=> true
 	);
 }}}
@@ -30,12 +30,12 @@ $filters = array
 {{{
 $filters = array
 	(
-	"ImportImports"					=> false,
-	"RemoveComments"				=> true, 
-	"RemoveEmptyRulesets"			=> true,
-	"RemoveEmptyAtBlocks"			=> true,
-	"ConvertLevel3Properties"		=> false,
-	"Variables"						=> true,
+	"ImportImports"			=> false,
+	"RemoveComments"		=> true, 
+	"RemoveEmptyRulesets"		=> true,
+	"RemoveEmptyAtBlocks"		=> true,
+	"ConvertLevel3Properties"	=> false,
+	"Variables"			=> true,
 	"RemoveLastDelarationSemiColon"	=> true
 	);
 }}}
@@ -50,14 +50,14 @@ value `true`, `false` or an array with configuration parameters getting passed t
 {{{
 $plugins = array
 	(
-	"Variables"						=> true,
-	"ConvertFontWeight"				=> true,
-	"ConvertHslColors"				=> true,
-	"ConvertRgbColors"				=> true,
-	"ConvertNamedColors"			=> true,
-	"CompressColorValues"			=> true,
-	"CompressUnitValues"			=> true,
-	"CompressExpressionValues"		=> true
+	"Variables"			=> true,
+	"ConvertFontWeight"		=> true,
+	"ConvertHslColors"		=> true,
+	"ConvertRgbColors"		=> true,
+	"ConvertNamedColors"		=> true,
+	"CompressColorValues"		=> true,
+	"CompressUnitValues"		=> true,
+	"CompressExpressionValues"	=> true
 	);
 }}}
 
@@ -65,14 +65,14 @@ $plugins = array
 {{{
 $plugins = array
 	(
-	"Variables"						=> true,
-	"ConvertFontWeight"				=> false,
-	"ConvertHslColors"				=> false,
-	"ConvertRgbColors"				=> false,
-	"ConvertNamedColors"			=> false,
-	"CompressColorValues"			=> false,
-	"CompressUnitValues"			=> false,
-	"CompressExpressionValues"		=> false
+	"Variables"			=> true,
+	"ConvertFontWeight"		=> false,
+	"ConvertHslColors"		=> false,
+	"ConvertRgbColors"		=> false,
+	"ConvertNamedColors"		=> false,
+	"CompressColorValues"		=> false,
+	"CompressUnitValues"		=> false,
+	"CompressExpressionValues"	=> false
 	);
 }}}
 
