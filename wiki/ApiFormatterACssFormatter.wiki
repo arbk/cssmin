@@ -1,7 +1,6 @@
 #sidebar Sidebar
 
 == _abstract class_ aCssFormatter ==
-<wiki:toc max_depth="0" />
 ----
 
 === Constants ===

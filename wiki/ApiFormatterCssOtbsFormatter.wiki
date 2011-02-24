@@ -13,16 +13,16 @@ _none_
 Indent string.
 ----
 
-==== _protected_ `integer` [ApiFormatterACssFormatter aCssFormatter::$padding] = 0 ====
+==== _protected_ `integer` [ApiFormatterACssFormatter#Properties aCssFormatter::$padding] = 0 ====
 Indent string.
 ----
 
-==== _protected_ `array` [ApiFormatterACssFormatter aCssFormatter::$tokens] = array() ====
+==== _protected_ `array` [ApiFormatterACssFormatter#Properties aCssFormatter::$tokens] = array() ====
 Array of tokens.
 ----
 
 === Methods ===
-==== `void` _public_ [ApiFormatterACssFormatter aCssFormatter::__construct](`array` $tokens, `string` $indent = null, `integer` $padding = null) ====
+==== `void` _public_ [ApiFormatterACssFormatter#Methods aCssFormatter::__construct](`array` $tokens, `string` $indent = null, `integer` $padding = null) ====
 Constructor setting the [ApiTokensACssToken tokens] and the indent string and declaration value padding.
  * `array` $tokens : Array of [ApiTokensACssToken tokens]
  * `string` $indent : Indent string (optional)
@@ -30,7 +30,7 @@ Constructor setting the [ApiTokensACssToken tokens] and the indent string and de
  * *Returns:* `void`
 ----
 
-==== `string` _abstract public_ [ApiFormatterACssFormatter aCssFormatter::__toString()] ====
+==== `string` _abstract public_ [ApiFormatterACssFormatter#Methods aCssFormatter::__toString()] ====
 Returns the [ApiTokensACssToken Tokens] as formatted string.
  * *Returns:* `string`
 ----

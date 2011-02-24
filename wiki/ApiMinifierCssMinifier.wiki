@@ -1,4 +1,42 @@
 #sidebar Sidebar
 
 == _class_ CssMinifier ==
-coming soon...
+----
+
+=== Constants ===
+_none_
+----
+
+=== Properties ===
+==== _protected_ `array` $filters = array() ====
+Array of [aCssMinifierFilter minifier filters].
+----
+
+==== _protected_ `array` $plugins = array() ====
+Array of [aCssMinifierPlugins minifier plugins].
+----
+
+==== _protected_ `string` $minified = "" ====
+Minified css source.
+----
+
+=== Methods ===
+==== `void` _public_ __construct(`string` $source = `null`, `array` $filters = `null`, `array` $plugins = `null`) ====
+Constructor setting the css source and filter and plugin configuration and create instances of every filter and plugin 
+defined in the configuration.
+ * `string` $source : CSS source [optional]
+ * `array` $filters : Filter configuration [optional]
+ * `array` $plugins : Plugin configuration [optional]
+ * *Returns:* `void`
+----
+
+==== `string` _public_ getMinified() ====
+Returns the minified Source.
+ * *Returns:* `string`
+----
+
+==== `string` _public_ minify(`string` $source) ====
+Minifies the CSS source.
+ * `string` $source : CSS sources
+ * *Returns:* `string`
+----

@@ -1,4 +1,30 @@
 #sidebar Sidebar
 
-== _class_ CssError ==
-coming soon...
+== _class_ !CssError ==
+----
+
+=== Constants ===
+_none_
+----
+
+=== Properties ===
+==== public_ `string` $Message = "" ====
+Error message.
+----
+
+==== public_ `string` $Source = "" ====
+Source.
+----
+
+=== Methods ===
+==== `void` _public_ __construct(`string` $message, `string` $source = "") ====
+Description
+ * `string` $message : Error message
+ * `string` $source : Corresponding source (optional)
+ * *Returns:* `void`
+----
+
+==== `void` _public_ __toString() ====
+Returns the error as formatted string.
+ * *Returns:* `string`
+----
