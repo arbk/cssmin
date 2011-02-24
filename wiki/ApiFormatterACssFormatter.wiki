@@ -2,17 +2,21 @@
 
 == _abstract class_ aCssFormatter ==
 === Constants ===
- _none_
+_none_
+----
 
 === Properties ===
 ==== _protected_ `string` $indent = "    " ====
 Indent string.
+----
 
 ==== _protected_ `integer` $padding = 0 ====
 Indent string.
+----
 
 ==== _protected_ `array` $tokens = array() ====
 Array of tokens.
+----
 
 === Methods ===
 ==== `void` _public_ __construct(`array` $tokens, `string` $indent = null, `integer` $padding = null) ====
@@ -21,6 +25,8 @@ Constructor of the formatter.
  * `string` $indent : Indent string (optional)
  * `integer` $padding : Declaration value padding (optional)
  * *Returns:* `void`
+----
 
 ==== `string` _abstract public_ __toString() ====
  * *Returns:* `string`
+----
