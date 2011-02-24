@@ -19,6 +19,6 @@
        * [MinifierPluginCompressExpressionValues CompressExpressionValues]
  * [ParserConfiguration Parser]
     * [ParserPlugins Plugins]
- * [Formatters Formatter]
+ * [Formatter Formatter]
     * [OtbsFormatter OTBS (The One True Brace Style)]
     * [WhitesmithsFormatter Whitesmiths]
