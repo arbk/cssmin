@@ -9,7 +9,7 @@ _none_
 ----
 
 === Properties ===
-==== _protected_ `string` [ApiFormatterACssFormatter#protected__string_$indent_=_"____" aCssFormatter::$indent] = "    " ====
+==== _protected_ `string` [ApiFormatterACssFormatter#Properties aCssFormatter::$indent] = "    " ====
 Indent string.
 ----
 
