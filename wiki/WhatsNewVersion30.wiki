@@ -3,7 +3,6 @@
 = Whats new in Version 3.0 =
 
 == Compatibility changes to Version 2.0.2 ==
-
  * The syntax of the minifier configuration was changed. See: [MinifierConfiguration Minifier configuration]
 
 == OOP ==
@@ -27,7 +26,6 @@ The build version is a single file containing every php file of the source as mi
 includes a autoload mechanism.
 
 == Variables now can get used as part of a declaration value ==
-
 {{{
 @variables
 	{
@@ -42,7 +40,6 @@ div.Test2
 }}}
 
 == Parser for expression() declaration values ==
-
 expresssion() declaration values will get parsed property even if the expression includes curly braces and semicolons.
 Additional if [https://github.com/rgrove/jsmin-php/ JSMin] is defined the expression will get compressed using 
 [https://github.com/rgrove/jsmin-php/ JSMin].
@@ -50,14 +47,6 @@ Additional if [https://github.com/rgrove/jsmin-php/ JSMin] is defined the expres
 == Formatters ==
 For debugging purposes two formatter are included. The formatter will output a array of tokens with correct indentation
 (and a optional declaration value padding). The formatters are:
- * [http://en.wikipedia.org/wiki/Indent_style#Variant:_1TBS OTBS (aka. 1TBS)] indent style
- * [http://en.wikipedia.org/wiki/Indent_style#Whitesmiths_style Whitesmiths] indent style
 
-Using the formatter:
-{{{
-$tokens = CssMin::parse(file_get_contents("path/to/source.css"));
-$formatter = new CssWhitesmithsFormatter($tokens, "    ", 32);
-echo "<pre>";
-echo $formatter;
-echo "</pre>
-}}}
+ * [OtbsFormatter OTBS (The One True Brace Style)]
+ * [WhitesmithsFormatter Whitesmiths]

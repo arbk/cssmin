@@ -1,0 +1,14 @@
+#sidebar Sidebar
+
+= AtVariables parser plugin =
+
+== Description ==
+This plugin is responsible to parse @variables at-rule blocks and containing declarations.
+
+See also: [MinifierFilterVariables Variables] minifier filter and [MinifierPluginVariables Variables minifier plugin].
+
+== Configuration: ==
+ * `true` / `false`
+ 
+== Defaults: ==
+ * `true`

@@ -1,0 +1,14 @@
+#sidebar Sidebar
+
+= Expression parser plugin =
+
+== Description ==
+This plugin is responsible to parse expression() declaration values in the css source. 
+
+See also: [MinifierPluginCompressExpressionValues CompressExpressionValues] minifier filter
+ 
+== Configuration: ==
+ * `true` / `false`
+ 
+== Defaults: ==
+ * `true`
