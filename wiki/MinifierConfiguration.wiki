@@ -12,7 +12,7 @@ The source css as string.
 The filter configuration as array (optional). The configuration array must use the name of the filter as key and as 
 value `true`, `false` or an array with configuration parameters getting passed to the filter.
 
-*Example filter configuration (with all filters enabled and configured):*
+==== Example filter configuration ====
 {{{
 $filters = array
 	(
@@ -26,7 +26,7 @@ $filters = array
 	);
 }}}
 
-*Default filter configuration:*
+==== Default filter configuration ====
 {{{
 $filters = array
 	(
@@ -46,33 +46,33 @@ See: [MinifierFilters Minifier filters]
 The plugin configuration as array (optional). The configuration array must use the name of the plugin as key and as 
 value `true`, `false` or an array with configuration parameters getting passed to the plugin.
 
-*Example plugin configuration (with all plugins enabled and configured):*
+==== Example plugin configuration ====
 {{{
 $plugins = array
 	(
-	"Variables"			=> true,
-	"ConvertFontWeight"		=> true,
-	"ConvertHslColors"		=> true,
-	"ConvertRgbColors"		=> true,
-	"ConvertNamedColors"		=> true,
-	"CompressColorValues"		=> true,
-	"CompressUnitValues"		=> true,
-	"CompressExpressionValues"	=> true
+	"Variables"						=> true,
+	"ConvertFontWeight"				=> true,
+	"ConvertHslColors"				=> true,
+	"ConvertRgbColors"				=> true,
+	"ConvertNamedColors"			=> true,
+	"CompressColorValues"			=> true,
+	"CompressUnitValues"			=> true,
+	"CompressExpressionValues"		=> true
 	);
 }}}
 
-*Default plugin configuration:*
+==== Default plugin configuration ====
 {{{
 $plugins = array
 	(
-	"Variables"			=> true,
-	"ConvertFontWeight"		=> false,
-	"ConvertHslColors"		=> false,
-	"ConvertRgbColors"		=> false,
-	"ConvertNamedColors"		=> false,
-	"CompressColorValues"		=> false,
-	"CompressUnitValues"		=> false,
-	"CompressExpressionValues"	=> false
+	"Variables"						=> true,
+	"ConvertFontWeight"				=> false,
+	"ConvertHslColors"				=> false,
+	"ConvertRgbColors"				=> false,
+	"ConvertNamedColors"			=> false,
+	"CompressColorValues"			=> false,
+	"CompressUnitValues"			=> false,
+	"CompressExpressionValues"		=> false
 	);
 }}}
 

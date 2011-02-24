@@ -1,0 +1,10 @@
+= Minifier plugins =
+
+ * [MinifierPluginVariables Variables]
+ * [MinifierPluginConvertFontWeight ConvertFontWeight]
+ * [MinifierPluginConvertHslColors ConvertHslColors]
+ * [MinifierPluginConvertRgbColors ConvertRgbColors]
+ * [MinifierPluginConvertNamedColors ConvertNamedColors]
+ * [MinifierPluginCompressColorValues CompressColorValues]
+ * [MinifierPluginCompressUnitValues CompressUnitValues]
+ * [MinifierPluginCompressExpressionValues CompressExpressionValues]

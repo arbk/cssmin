@@ -1,5 +1,3 @@
-#sidebar TableOfContents
-
 = !ImportImports minifier filter =
 
 == Description ==
@@ -7,7 +5,7 @@ This filter external stylesheets defined in @import at-rules will get parsed and
 Imported stylesheets are allowed to have their own @import at-rules. It is required to set set the configuration 
 parameter `BasePath` to a valid path. All paths defined in @import at-rules will get interpreted based on this base path. 
 
-If there are media type defined in the @import at-rule there will be alot of processing to match the browsers behavior. This includes:
+If there are media type defined in the @import at-rule there will be alot of processing to simulate the browsers behavior. This includes:
 
  # document level rulesets get wrapped into a @media at-rule block with the media types defined in the @import at-rule.
  # @font-face, @media, @page at-rule blocks and other at-rule statements will get moved to the top.

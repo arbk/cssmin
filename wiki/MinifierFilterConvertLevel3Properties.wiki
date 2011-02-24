@@ -1,32 +1,29 @@
-= Whats new in Version 2.0.2 =
+= !ConvertLevel3Properties minifier filter =
 
-== Compatibility changes to Version 2.0.1 ==
+== Description ==
+This filter convert [#Supported properties CSS Level 3 properties] (and some browser specific properties) to browser specific counterparts.
 
- * Configuration option "convert-color-values" renamed to "convert-rgb-color-values"
+== Configuration: ==
+ * `true` / `false`
+ 
+== Defaults: ==
+ * `true`
 
-== Conversion of named color values ==
+== Before: ==
+{{{
+div
+	{
+	border-radius: 1em;
+	}
+}}}
 
-New configuration option "convert-named-color-values". Named color will get converted to hexadecimal notation. Supported color names are: 
- * [http://www.w3.org/TR/REC-html40/types.html#h-6.5 HTML 4.01 web colors]
- * [http://en.wikipedia.org/wiki/X11_color_names X11 color names supported by CSS Level 3]
- * [http://www.w3.org/TR/2003/WD-CSS21-20030915/syndata.html#color-units The color "orange" as defined in CSS Level 2.1]
+== After: ==
+{{{
+div{-moz-border-radius:1em;-webkit-border-radius:1em;border-radius:1em;}
+}}}
 
-== Conversion of font-weight values ==
-
-New configuration option "convert-font-weight-values".
-
-The font weight values "normal" and "bold" get converted to "400" and "700" 
-
-== Conversion of HSL color values ==
-
-New configuration option "convert-hsl-color-values". HSL color values will get converted to hexadecimal notation. So `hsl(232,36%,48%)` will get converted to `#4e5aa7`.
-
-
-== convert-css3-properties ==
-
-Supports now: 
-
- * animation
+== Supported properties ==
+* animation
  * animation-delay
  * animation-direction
  * animation-duration

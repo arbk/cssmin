@@ -1,3 +1,8 @@
-= Minifier plugins =
+= Minifier filter =
 
-* [MinifierFilterImportImports ImportImports]
+ * [MinifierFilterImportImports ImportImports]
+ * [MinifierFilterRemoveComments RemoveComments]
+ * [MinifierFilterRemoveEmptyRulesets RemoveEmptyRulesets]
+ * [MinifierFilterRemoveEmptyAtBlocks RemoveEmptyAtBlocks]
+ * [MinifierFilterConvertLevel3Properties ConvertLevel3Properties]
+ * [MinifierFilterVariables Variables]
