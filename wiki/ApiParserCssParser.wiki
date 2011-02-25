@@ -2,3 +2,164 @@
 
 == _class_ CssParser ==
 coming soon...
+
+#sidebar Sidebar
+
+== _class_ !CssParser ==
+@todo
+
+----
+
+=== Properties ===
+==== _private_ `string` $buffer = "" ====
+The current parse buffer.
+----
+
+==== _private_ `array` $plugins = array() ====
+Array of [ApiParserPluginsACssParserPlugin parser plugins].
+----
+
+==== _private_ `string` $source = "" ====
+The css source to parse.
+----
+
+==== _private_ `string` $state = "T_DOCUMENT" ====
+The current parser state; defaults to T_DOCUMENT (document level).
+----
+
+==== _private_ `string` $stateExclusive = "" ====
+The current parser exclusive state. If set the parser exclusive state contains the class name of the exclusive
+parser plugin. While the parser exclusive stateis set only defined plugin get called. This state is used by
+[ApiParserPluginsCssCommentParserPlugin CssCommentParserPlugin], [ApiParserPluginsCssStringParserPlugin CssStringParserPlugin]
+and [ApiParserPluginsCssUrlParserPlugin CssUrlParserPlugin].
+----
+
+==== _private_ `mixed` $stateMediaTypes = false ====
+The current parser media types state. Contain the media types defined by a @media at-rule and gets resets to `false` on 
+the end of the block.
+----
+
+==== _private_ `array` $states = array("T_DOCUMENT") ====
+The parser state stack.
+----
+
+==== _private_ `array` $tokens = array() ====
+The [ApiTokensACssToken tokens] parsed by the parser.
+----
+
+=== Methods ===
+==== `void` _public_ __construct(`string` $source = null, `array` $plugins = null) ====
+Constructor setting the css source and plugin configuration. Creates instances of every configured plugin.
+ * `string` $source : CSS source (optional)
+ * `array` $plugins : Plugin configuration (optional)
+ * *Returns:* `void`
+----
+
+==== `void` _public_ appendToken([ApiTokensACssToken aCssToken] $token) ====
+Appends a [ApiTokensACssToken aCssToken] to the array of parsed [ApiTokensACssToken tokens]. This method is used 
+by [ApiParserPluginsACssParserPlugin parser plugins] to add [ApiTokensACssToken tokens].
+ * [ApiTokensACssToken aCssToken] $token : Token to append
+ * *Returns:* `void`
+----
+
+==== `void` _public_ clearBuffer() ====
+Clear the buffer.
+ * *Returns:* `void`
+----
+
+==== `string` _public_ getAndClearBuffer(`string` $trim = "", `boolean` $tolower = false) ====
+Returns the content of the buffer and clears the buffer.
+ * `string` $trim : If not empty the returned buffer will get trimmed with these trim chars
+ * `boolean` $tolower : If set to `true` the returned buffer will get converted to lowercase
+ * *Returns:* `string`
+----
+
+==== `string` _public_ getBuffer(`string` $trim = "", `boolean` $tolower = false) ====
+Returns the content of the buffer.
+ * `string` $trim : If not empty the returned buffer will get trimmed with these trim chars
+ * `boolean` $tolower : If set to `true` the returned buffer will get converted to lowercase
+ * *Returns:* `string`
+----
+
+==== `array` _public_ getMediaTypes() ====
+Returns the parser media types state. 
+ * *Returns:* `array` : The current parser media types state
+----
+
+==== `string` _public_ getSource() ====
+Returns the css source.
+ * *Returns:* `string` : The css source
+----
+
+==== `string` _public_ getState() ====
+Returns the current parser state.
+ * *Returns:* `string` : The current parser state
+----
+
+==== [ApiParserPluginsACssParserPlugin aCssParserPlugin] _public_ getPlugin(`string` $class) ====
+Returns a  [ApiParserPluginsACssParserPlugin plugin] by class name of the plugin.
+ * `string` $class : The class name of the plugin
+ * *Returns:* [ApiParserPluginsACssParserPlugin aCssParserPlugin]
+----
+
+==== `array` _public_ getTokens() ====
+Return the parsed [ApiTokensACssToken tokens].
+ * *Returns:* `array` : The parsed [ApiTokensACssToken tokens]
+----
+
+==== `boolean` _public_ isState(`string` $state) ====
+Tests if a state equals the current parser state.
+ * `string` $state : The state to compare with the current parser state
+ * *Returns:* `boolean` : `true` if $state equals the current parser state; `false` if not 
+----
+
+==== `array` _public_ parse(`string` $source) ====
+Parses a css source and return a array of [ApiTokensACssToken tokens].
+ * `string` $source : The css source to parse
+ * *Returns:* `array` The parsed [ApiTokensACssToken tokens]
+----
+
+==== `string` _public_ popState() ====
+Removes the last state of the parser state stack.
+ * *Returns:* `string` : The last parser state
+----
+
+==== `integer` _public_ pushState(`string` $state) ====
+Add a new state on top of the parser state stack.
+ * `string` $state : The state to push on the parser state
+ * *Returns:* `integer` : The new amount of parser states in the parser state stack
+----
+
+==== `void` _public_ setBuffer(`string` $buffer) ====
+Sets the content of the buffer.
+ * `string` $buffer : The new content of the parser buffer
+ * *Returns:* `void`
+----
+
+==== `void` _public_ setExclusive(`string` $exclusive) ====
+Sets the parser exclusive state.
+ * `string` $exclusive : Class name of the plugin that should get called exclusivly
+ * *Returns:* `void`
+----
+
+==== `void` _public_ setMediaTypes(`array` $mediaTypes) ====
+Sets the parser media types state.
+ * `array` $mediaTypes : The array of media types to set a new parser media type state
+ * *Returns:* `void`
+----
+
+==== `string` _public_ setState(`string` $state) ====
+Sets the parser state. This method will remove the last state and add a new state on the parser state.
+ * `string` $state : The state to set as current parser state.
+ * *Returns:* `string` : The last parser state
+----
+
+==== `void` _public_ unsetExclusive() ====
+Clears the parser exclusive state.
+ * *Returns:* `void`
+----
+
+==== `void` _public_ unsetMediaTypes() ====
+Clears the parser media types state.
+ * *Returns:* `void`
+----

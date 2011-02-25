@@ -59,7 +59,7 @@
           * [ApiMinifierPluginsCssVariablesMinifierPlugin CssVariablesMinifierPlugin]
     * [ApiParserCssParser CssParser]
        * [ApiParserPluginsACssParserPlugin aCssParserPlugin]
-          * [ApiParserPluginsAtCharsetParserPlugin AtCharsetParserPlugin]
+          * [ApiParserPluginsCssAtCharsetParserPlugin CssAtCharsetParserPlugin]
           * [ApiParserPluginsCssAtFontFaceParserPlugin CssAtFontFaceParserPlugin]
           * [ApiParserPluginsCssAtImportParserPlugin CssAtImportParserPlugin]
           * [ApiParserPluginsCssAtMediaParserPlugin CssAtMediaParserPlugin]
