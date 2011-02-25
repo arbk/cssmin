@@ -1,11 +1,7 @@
 #sidebar Sidebar
 
-== _class_ CssWhitesmithsFormatter _extends_ [ApiFormatterACssFormatter aCssFormatter] ==
+== _class_ !CssWhitesmithsFormatter _extends_ [ApiFormatterACssFormatter aCssFormatter] ==
 This Formatter return an array of [ApiTokensACssToken tokens] fromatted in [http://goo.gl/etzLs Whitesmiths indent style].
-----
-
-=== Constants ===
-_none_
 ----
 
 === Properties ===

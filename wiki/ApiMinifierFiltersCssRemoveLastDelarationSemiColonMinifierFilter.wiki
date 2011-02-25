@@ -1,6 +1,6 @@
 #sidebar Sidebar
 
-== _class_ CssRemoveLastDelarationSemiColonMinifierFilter _extends_ [ApiMinifierFiltersACssMinifierFilter aCssMinifierFilter] ==
+== _class_ !CssRemoveLastDelarationSemiColonMinifierFilter _extends_ [ApiMinifierFiltersACssMinifierFilter aCssMinifierFilter] ==
 This [ApiMinifierFiltersACssMinifierFilter minifier filter] will edit any last 
 [ApiTokensCssAtFontFaceDeclarationToken CssAtFontFaceDeclarationToken], 
 [ApiTokensCssAtPageDeclarationToken CssAtPageDeclarationToken] or
@@ -8,16 +8,11 @@ This [ApiMinifierFiltersACssMinifierFilter minifier filter] will edit any last
 `IsLast` property to `true`.
 ----
 
-=== Constants ===
-_none_
-----
-
 === Properties ===
 ==== _protected_ `array` [ApiMinifierFiltersACssMinifierFilter#Properties aCssMinifierFilter::$configuration] = array() ====
 The filter configuration.
 ----
 
-=== Properties ===
 ==== _protected_ [ApiMinifierFiltersACssMinifierFilter#Properties aCssMinifierFilter::$minifier] = `null` ====
 Instance of the [ApiMinifierCssMinifier CssMinifier] of the filter.
 ----
@@ -30,11 +25,13 @@ Constructor setting the instance of [ApiMinifierCssMinifier CssMinifier] and the
  * *Returns:* `void`
 ----
 
-==== `void` _abstract public_ [ApiMinifierFiltersACssMinifierFilter#Methods aCssMinifierFilter::apply](`array` &$tokens) ====
+==== `integer` _public_ apply(`array` &$tokens) ====
+Implements [ApiMinifierFiltersACssMinifierFilter#Methods aCssMinifierFilter::apply].
+
 Applys the filter logic on the array of [ApiTokensACssToken tokens] and returns the amount of changed 
 [ApiTokensCssAtFontFaceDeclarationToken CssAtFontFaceDeclarationToken], 
 [ApiTokensCssAtPageDeclarationToken CssAtPageDeclarationToken] or 
 [ApiTokensCssRulesetDeclarationToken CssRulesetDeclarationToken] or 0 if no [ApiTokensACssToken tokens] was changed.
- * `array` $&$tokens : Array of [ApiTokensACssToken tokens]
+ * `array` &$tokens : Array of [ApiTokensACssToken tokens]
  * *Returns:* `integer` Amount of added, changed or removed tokens; a return value large than 0 will rebuild the array
 ----

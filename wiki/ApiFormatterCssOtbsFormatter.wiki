@@ -1,11 +1,7 @@
 #sidebar Sidebar
 
-== _class_ CssOtbsFormatter _extends_ [ApiFormatterACssFormatter aCssFormatter] ==
+== _class_ !CssOtbsFormatter _extends_ [ApiFormatterACssFormatter aCssFormatter] ==
 This Formatter return an array of [ApiTokensACssToken tokens] formatted in [http://goo.gl/j4XdU OTBS (The One True Brace Style) indent style].
-----
-
-=== Constants ===
-_none_
 ----
 
 === Properties ===

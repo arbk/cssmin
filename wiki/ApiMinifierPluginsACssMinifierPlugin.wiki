@@ -7,16 +7,11 @@ Minifier plugin are used for one per one processing of [ApiTokensACssToken token
 [ApiParserCssParser CssParser] to change properties of the [ApiTokensACssToken token].
 ----
 
-=== Constants ===
-_none_
-----
-
 === Properties ===
 ==== _protected_ `array` $configuration = array() ====
 The plugin configuration.
 ----
 
-=== Properties ===
 ==== _protected_ [ApiMinifierCssMinifier CssMinifier] $minifier = `null` ====
 Instance of the [ApiMinifierCssMinifier CssMinifier] of the filter.
 ----
@@ -29,12 +24,12 @@ Constructor setting the instance of [ApiMinifierCssMinifier CssMinifier] and the
  * *Returns:* `void`
 ----
 
-==== `integer` _abstract public_ apply(`array` &$token) ====
+==== `boolean` _abstract public_ apply(`array` &$token) ====
 Applys the plugin logic on the [ApiTokensACssToken token].
 
 If the method return `true` the minifier will continue with the next [ApiTokensACssToken token] and if returned `false` the 
 [ApiTokensACssToken token] will get handed over to the next minifier plugin.
- * `array` $&$token : [ApiTokensACssToken token]
+ * `array` &$token : [ApiTokensACssToken token]
  * *Returns:* `boolean` Amount of changed [ApiTokensACssToken tokens]
 ----
 

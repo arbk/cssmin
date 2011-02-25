@@ -1,4 +1,52 @@
 #sidebar Sidebar
 
 == _class_ CssCompressColorValuesMinifierPlugin _extends_ [ApiMinifierPluginsACssMinifierPlugin aCssMinifierPlugin] ==
-coming soon...
+This [ApiMinifierPluginsACssMinifierPlugin minifier plugin] triggers on [ApiTokensCssAtFontFaceDeclarationToken CssAtFontFaceDeclarationToken],
+[ApiTokensCssAtPageDeclarationToken CssAtPageDeclarationToken] and [ApiTokensCssRulesetDeclarationToken CssRulesetDeclarationToken]
+and compress hexadecimal color values with 6 chars to the short notation with 3 chars (if possible). 
+
+*Example:*
+{{{
+color: #aabbcc;
+}}}
+
+*Will get compressed to:*
+{{{
+color:#abc;
+}}}
+
+
+----
+
+=== Properties ===
+==== _protected_ `array` [ApiMinifierPluginsACssMinifierPlugin aCssMinifierPlugin::$configuration] = array() ====
+The plugin configuration.
+----
+
+==== _protected_ [ApiMinifierCssMinifier CssMinifier] [ApiMinifierPluginsACssMinifierPlugin aCssMinifierPlugin::$minifier] = `null` ====
+Instance of the [ApiMinifierCssMinifier CssMinifier] of the filter.
+----
+	
+=== Methods ===
+==== `void` _public_ [ApiMinifierPluginsACssMinifierPlugin aCssMinifierPlugin::__construct]([ApiMinifierCssMinifier CssMinifier] $minifier, `array` $configuration = array()) ====
+Constructor setting the instance of [ApiMinifierCssMinifier CssMinifier] and the plugin configuration.
+ * [ApiMinifierCssMinifier CssMinifier] $minifier : Instance of the [ApiMinifierCssMinifier CssMinifier]
+ * `array` $configuration : Filter configuration (optional)
+ * *Returns:* `void`
+----
+
+==== `boolean` _public_ apply(`array` &$token) ====
+Implements [ApiMinifierPluginsACssMinifierPlugin#Methods aCssMinifierPlugin::apply()].
+
+Applys the plugin logic on the [ApiTokensACssToken token]. ...
+
+ * `array` &$token : [ApiTokensACssToken token]
+ * *Returns:* `boolean` Amount of changed [ApiTokensACssToken tokens]
+----
+
+==== `array` _public_ getTriggerTokens() ====
+Implements [ApiMinifierPluginsACssMinifierPlugin#Methods aCssMinifierPlugin::getTriggerTokens()].
+
+Returns an array with token class names the plugin have to get called on. This avoids unnessasary calls to the plugin.
+ * *Returns:* `array` Array of token class name this plugin will trigger on
+----

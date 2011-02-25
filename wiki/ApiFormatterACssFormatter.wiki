@@ -3,10 +3,6 @@
 == _abstract class_ aCssFormatter ==
 ----
 
-=== Constants ===
-_none_
-----
-
 === Properties ===
 ==== _protected_ `string` $indent = "    " ====
 Indent string.

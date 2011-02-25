@@ -1,11 +1,7 @@
 #sidebar Sidebar
 
-== _class_ CssMinifier ==
+== _class_ !CssMinifier ==
 This class is used to minify a css source.
-----
-
-=== Constants ===
-_none_
 ----
 
 === Properties ===

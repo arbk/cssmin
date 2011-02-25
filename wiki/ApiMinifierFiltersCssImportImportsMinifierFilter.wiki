@@ -1,14 +1,10 @@
 #sidebar Sidebar
 
-== _class_ CssImportImportsMinifierFilter _extends_ [ApiMinifierFiltersACssMinifierFilter aCssMinifierFilter] ==
+== _class_ !CssImportImportsMinifierFilter _extends_ [ApiMinifierFiltersACssMinifierFilter aCssMinifierFilter] ==
 This [ApiMinifierFiltersACssMinifierFilter minifier filter] will parse and import external css files defined in 
 @import at-rules into the current source.
 
 This filter requires that the configuration parameter `BasePath` get set.
-----
-
-=== Constants ===
-_none_
 ----
 
 === Properties ===
@@ -16,7 +12,6 @@ _none_
 The filter configuration.
 ----
 
-=== Properties ===
 ==== _protected_ [ApiMinifierFiltersACssMinifierFilter#Properties aCssMinifierFilter::$minifier] = `null` ====
 Instance of the [ApiMinifierCssMinifier CssMinifier] of the filter.
 ----
@@ -29,9 +24,11 @@ Constructor setting the instance of [ApiMinifierCssMinifier CssMinifier] and the
  * *Returns:* `void`
 ----
 
-==== `void` _abstract public_ [ApiMinifierFiltersACssMinifierFilter#Methods aCssMinifierFilter::apply](`array` &$tokens) ====
+==== `integer` _public_ apply(`array` &$tokens) ====
+Implements [ApiMinifierFiltersACssMinifierFilter#Methods aCssMinifierFilter::apply].
+
 Applys the filter logic on the array of [ApiTokensACssToken tokens] and returns the amount of [ApiTokensACssToken tokens]
 added or 0 if no @import at-rule was found or not processable
- * `array` $&$tokens : Array of [ApiTokensACssToken tokens]
+ * `array` &$tokens : Array of [ApiTokensACssToken tokens]
  * *Returns:* `integer` Amount of added, changed or removed tokens; a return value large than 0 will rebuild the array
 ----

@@ -1,6 +1,6 @@
 #sidebar Sidebar
 
-== _class_ CssVariablesMinifierFilter _extends_ [ApiMinifierFiltersACssMinifierFilter aCssMinifierFilter] ==
+== _class_ !CssVariablesMinifierFilter _extends_ [ApiMinifierFiltersACssMinifierFilter aCssMinifierFilter] ==
 This [ApiMinifierFiltersACssMinifierFilter minifier filter] search for 
 [ApiTokensCssAtVariablesDeclarationToken CssAtVariablesDeclarationToken], reads the variable names and values and 
 remove them. 
@@ -8,16 +8,11 @@ remove them.
 The parsed variables will get send to the [ApiMinifierPluginsCssVariablesMinifierPlugin CssVariablesMinifierPlugin minifier plugin].
 ----
 
-=== Constants ===
-_none_
-----
-
 === Properties ===
 ==== _protected_ `array` [ApiMinifierFiltersACssMinifierFilter#Properties aCssMinifierFilter::$configuration] = array() ====
 The filter configuration.
 ----
 
-=== Properties ===
 ==== _protected_ [ApiMinifierFiltersACssMinifierFilter#Properties aCssMinifierFilter::$minifier] = `null` ====
 Instance of the [ApiMinifierCssMinifier CssMinifier] of the filter.
 ----
@@ -30,12 +25,14 @@ Constructor setting the instance of [ApiMinifierCssMinifier CssMinifier] and the
  * *Returns:* `void`
 ----
 
-==== `void` _abstract public_ [ApiMinifierFiltersACssMinifierFilter#Methods aCssMinifierFilter::apply](`array` &$tokens) ====
+==== `integer` _public_ apply(`array` &$tokens) ====
+Implements [ApiMinifierFiltersACssMinifierFilter#Methods aCssMinifierFilter::apply].
+
 Applys the filter logic on the array of [ApiTokensACssToken tokens] and returns the amount of removed 
 [ApiTokensCssAtVariablesStartToken CssAtVariablesStartToken], 
 [ApiTokensCssAtVariablesDeclarationToken CssAtVariablesDeclarationToken] and 
 [ApiTokensCssAtVariablesEndToken CssAtVariablesEndToken] or 0 if no tokens were found.
 
- * `array` $&$tokens : Array of [ApiTokensACssToken tokens]
+ * `array` &$tokens : Array of [ApiTokensACssToken tokens]
  * *Returns:* `integer` Amount of added, changed or removed tokens; a return value large than 0 will rebuild the array
 ----

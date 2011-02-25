@@ -7,16 +7,11 @@ Minifier filters are used for pre-processing the array of [ApiTokensACssToken to
 [ApiParserCssParser CssParser] to add, remove or change [ApiTokensACssToken tokens].
 ----
 
-=== Constants ===
-_none_
-----
-
 === Properties ===
 ==== _protected_ `array` $configuration = array() ====
 The filter configuration.
 ----
 
-=== Properties ===
 ==== _protected_ [ApiMinifierCssMinifier CssMinifier] $minifier = `null` ====
 Instance of the [ApiMinifierCssMinifier CssMinifier] of the filter.
 ----
@@ -38,6 +33,6 @@ If the return value is larger than 0 the array will get rebuild by the [ApiMinif
 
 To remove a [ApiTokensACssToken token] you only have to set the index to `null`.
 
- * `array` $&$tokens : Array of [ApiTokensACssToken tokens]
+ * `array` &$tokens : Array of [ApiTokensACssToken tokens]
  * *Returns:* `integer` Amount of changed [ApiTokensACssToken tokens]
 ----

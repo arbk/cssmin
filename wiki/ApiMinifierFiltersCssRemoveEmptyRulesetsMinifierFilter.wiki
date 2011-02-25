@@ -1,11 +1,7 @@
 #sidebar Sidebar
 
-== _class_ CssRemoveEmptyRulesetsMinifierFilter _extends_ [ApiMinifierFiltersACssMinifierFilter aCssMinifierFilter] ==
+== _class_ !CssRemoveEmptyRulesetsMinifierFilter _extends_ [ApiMinifierFiltersACssMinifierFilter aCssMinifierFilter] ==
 This [ApiMinifierFiltersACssMinifierFilter minifier filter] will remove empty rulesets.
-----
-
-=== Constants ===
-_none_
 ----
 
 === Properties ===
@@ -13,7 +9,6 @@ _none_
 The filter configuration.
 ----
 
-=== Properties ===
 ==== _protected_ [ApiMinifierFiltersACssMinifierFilter#Properties aCssMinifierFilter::$minifier] = `null` ====
 Instance of the [ApiMinifierCssMinifier CssMinifier] of the filter.
 ----
@@ -26,11 +21,13 @@ Constructor setting the instance of [ApiMinifierCssMinifier CssMinifier] and the
  * *Returns:* `void`
 ----
 
-==== `void` _abstract public_ [ApiMinifierFiltersACssMinifierFilter#Methods aCssMinifierFilter::apply](`array` &$tokens) ====
+==== `integer` _public_ apply(`array` &$tokens) ====
+Implements [ApiMinifierFiltersACssMinifierFilter#Methods aCssMinifierFilter::apply].
+
 Applys the filter logic on the array of [ApiTokensACssToken tokens] and returns the amount of removed 
 [ApiTokensCssRulesetDeclarationToken CssRulesetDeclarationToken] or 0 if no empty [ApiTokensCssRulesetDeclarationToken CssRulesetDeclarationToken]
 was found.
- * `array` $&$tokens : Array of [ApiTokensACssToken tokens]
+ * `array` &$tokens : Array of [ApiTokensACssToken tokens]
  * *Returns:* `integer` Amount of added, changed or removed tokens; a return value large than 0 will rebuild the array
 ----
 
