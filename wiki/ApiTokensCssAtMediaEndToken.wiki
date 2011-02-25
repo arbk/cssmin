@@ -1,7 +1,7 @@
 #sidebar Sidebar
 
 == _class_ !CssAtMediaEndToken _extends_ [ApiTokensACssRightCurlyBraceToken aCssRightCurlyBraceToken] ==
-coming soon...
+This [ApiTokensACssToken aCssToken] represents the end of a @media at-rule block.
 ----
 
 ==== `string` _public_ [ApiTokensACssRightCurlyBraceToken#Methods aCssRightCurlyBraceToken::__toString]() ====

@@ -1,7 +1,7 @@
 #sidebar Sidebar
 
 == _class_ !CssAtFontFaceDeclarationToken _extends_ [ApiTokensACssToken aCssToken] ==
-coming soon...
+This [ApiTokensACssToken aCssToken] represents a declaration in a @font-face at-rule block.
 ----
 
 === Properties ===

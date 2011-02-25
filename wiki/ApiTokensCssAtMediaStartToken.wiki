@@ -1,7 +1,10 @@
 #sidebar Sidebar
 
 == _class_ !CssAtMediaStartToken _extends_ [ApiTokensACssToken aCssToken] ==
-coming soon...
+This [ApiTokensACssToken aCssToken] represents the start of a @media at-rule block.
+{{{
+@media screen, projection {...
+}}}
 ----
 
 === Properties ===

@@ -1,7 +1,7 @@
 #sidebar Sidebar
 
 == _class_ !CssAtVariablesDeclarationToken _extends_ [ApiTokensACssNullToken aCssNullToken] ==
-coming soon...
+This [ApiTokensACssToken aCssToken] represents a declaration in a @variables at-rule block.
 ----
 
 === Properties ===

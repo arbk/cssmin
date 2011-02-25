@@ -1,7 +1,10 @@
 #sidebar Sidebar
 
 == _class_ !CssAtVariablesStartToken _extends_ [ApiTokensACssNullToken aCssNullToken] ==
-coming soon...
+This [ApiTokensACssToken aCssToken] represents the start of a @variables at-rule block.
+{{{
+@variables print {...
+}}}
 ----
 
 === Properties ===

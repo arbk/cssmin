@@ -1,7 +1,7 @@
 #sidebar Sidebar
 
 == _class_ aCssRightCurlyBraceToken _extends_ [ApiTokensACssToken aCssToken] ==
-coming soon...
+Abstract definition of a [ApiTokensACssToken aCssToken] only outputs a right curly brace.
 ----
 
 ==== `string` _public_ __toString() ====

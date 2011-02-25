@@ -1,7 +1,7 @@
 #sidebar Sidebar
 
 == _class_ !CssAtVariablesEndToken _extends_ [ApiTokensACssNullToken aCssNullToken] ==
-coming soon...
+This [ApiTokensACssToken aCssToken] represents the end of a @variables at-rule block.
 ----
 
 ==== `string` _public_ [ApiTokensACssNullToken#Methods aCssNullToken::__toString]() ====

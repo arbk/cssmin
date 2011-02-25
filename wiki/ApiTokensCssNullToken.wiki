@@ -1,7 +1,7 @@
 #sidebar Sidebar
 
 == _class_ !CssNullToken _extends_ [ApiTokensACssNullToken aCssNullToken] ==
-coming soon...
+This [ApiTokensACssToken aCssToken] is a helper token with no output.
 ----
 
 ==== `string` _public_ [ApiTokensACssNullToken#Methods aCssNullToken::__toString]() ====

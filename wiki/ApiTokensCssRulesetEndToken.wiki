@@ -1,7 +1,7 @@
 #sidebar Sidebar
 
 == _class_ !CssRulesetEndToken _extends_ [ApiTokensACssRightCurlyBraceToken aCssRightCurlyBraceToken] ==
-coming soon...
+This [ApiTokensACssToken aCssToken] represents the end of a ruleset.
 ----
 
 ==== `string` _public_ [ApiTokensACssRightCurlyBraceToken#Methods aCssRightCurlyBraceToken::__toString]() ====

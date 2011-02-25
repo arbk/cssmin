@@ -1,7 +1,10 @@
 #sidebar Sidebar
 
 == _class_ !CssAtFontFaceStartToken _extends_ [ApiTokensACssToken aCssToken] ==
-coming soon...
+This [ApiTokensACssToken aCssToken] represents the start of a @font-face at-rule block.
+{{{
+@font-face {...
+}}}
 ----
 
 === Methods ===
