@@ -1,6 +1,6 @@
 #sidebar Sidebar
 
-== _class_ CssCompressColorValuesMinifierPlugin _extends_ [ApiMinifierPluginsACssMinifierPlugin aCssMinifierPlugin] ==
+== _class_ !CssCompressColorValuesMinifierPlugin _extends_ [ApiMinifierPluginsACssMinifierPlugin aCssMinifierPlugin] ==
 This [ApiMinifierPluginsACssMinifierPlugin minifier plugin] triggers on [ApiTokensCssAtFontFaceDeclarationToken CssAtFontFaceDeclarationToken],
 [ApiTokensCssAtPageDeclarationToken CssAtPageDeclarationToken] and [ApiTokensCssRulesetDeclarationToken CssRulesetDeclarationToken]
 and compress hexadecimal color values with 6 chars to the short notation with 3 chars (if possible). 
@@ -38,15 +38,25 @@ Constructor setting the instance of [ApiMinifierCssMinifier CssMinifier] and the
 ==== `boolean` _public_ apply(`array` &$token) ====
 Implements [ApiMinifierPluginsACssMinifierPlugin#Methods aCssMinifierPlugin::apply()].
 
-Applys the plugin logic on the [ApiTokensACssToken token]. ...
+Applys the plugin logic on the [ApiTokensACssToken token].
 
  * `array` &$token : [ApiTokensACssToken token]
- * *Returns:* `boolean` Amount of changed [ApiTokensACssToken tokens]
+ * *Returns:* `boolean` `true to continue with the next token, `false` to hand over the current token to the next plugin
 ----
 
 ==== `array` _public_ getTriggerTokens() ====
 Implements [ApiMinifierPluginsACssMinifierPlugin#Methods aCssMinifierPlugin::getTriggerTokens()].
 
-Returns an array with token class names the plugin have to get called on. This avoids unnessasary calls to the plugin.
+Returns an array with token class names the plugin have to get called on. This avoids unnessasary calls to the plugin. This
+plugin will return:
+
+{{{
+array
+	(
+	"CssAtFontFaceDeclarationToken",
+	"CssAtPageDeclarationToken",
+	"CssRulesetDeclarationToken"
+	);
+}}}
  * *Returns:* `array` Array of token class name this plugin will trigger on
 ----

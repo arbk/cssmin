@@ -30,7 +30,7 @@ Applys the plugin logic on the [ApiTokensACssToken token].
 If the method return `true` the minifier will continue with the next [ApiTokensACssToken token] and if returned `false` the 
 [ApiTokensACssToken token] will get handed over to the next minifier plugin.
  * `array` &$token : [ApiTokensACssToken token]
- * *Returns:* `boolean` Amount of changed [ApiTokensACssToken tokens]
+ * *Returns:* `boolean` `true to continue with the next token, `false` to hand over the current token to the next plugin
 ----
 
 ==== `array` _abstract public_ getTriggerTokens() ====
