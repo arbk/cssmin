@@ -1,6 +1,8 @@
 #sidebar Sidebar
 
 == _class_ CssConvertLevel3PropertiesMinifierFilter _extends_ [ApiMinifierFiltersACssMinifierFilter aCssMinifierFilter] ==
+This [ApiMinifierFiltersACssMinifierFilter minifier filter] will trigger on most CSS Level 3 properties (and some browser 
+specific ones) and add other browser specific declaration properties.
 ----
 
 === Constants ===
@@ -9,24 +11,25 @@ _none_
 
 === Properties ===
 ==== _protected_ `array` [ApiMinifierFiltersACssMinifierFilter#Properties aCssMinifierFilter::$configuration] = array() ====
-Filter configuration.
+The filter configuration.
 ----
 
 === Properties ===
 ==== _protected_ [ApiMinifierFiltersACssMinifierFilter#Properties aCssMinifierFilter::$minifier] = `null` ====
-Instance of [ApiMinifierCssMinifier CssMinifier] of the filter.
+Instance of the [ApiMinifierCssMinifier CssMinifier] of the filter.
 ----
 	
 === Methods ===
 ==== `void` _public_ [ApiMinifierFiltersACssMinifierFilter#Methods aCssMinifierFilter::__construct]([ApiMinifierCssMinifier CssMinifier] $minifier, `array` $configuration = array()) ====
-Constructor. setting the [ApiMinifierCssMinifier CssMinifier] and the plugin configuration.
+Constructor setting the instance of [ApiMinifierCssMinifier CssMinifier] and the plugin configuration.
  * [ApiMinifierCssMinifier CssMinifier] $minifier : Instance of [ApiMinifierCssMinifier CssMinifier]
  * `array` $configuration : Filter configuration [optional]
  * *Returns:* `void`
 ----
 
 ==== `void` _abstract public_ [ApiMinifierFiltersACssMinifierFilter#Methods aCssMinifierFilter::apply](`array` &$tokens) ====
-Filter the tokens.
+Apply the filter logic on the array of [ApiTokensACssToken tokens]. Returns the amount of added [ApiTokensACssToken tokens]
+or 0 if no matching declaration property was found.
  * `array` $&$tokens : Array of [ApiTokensACssToken tokens]
  * *Returns:* `integer` Amount of added, changed or removed tokens; a return value large than 0 will rebuild the array
 ----

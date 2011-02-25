@@ -2,4 +2,6 @@
 
 = API Documentation ==
 
-The api documentation is under constructing and will be ready in the next days.
+The api documentation is under construction and will be ready in the next days.
+
+== Class index ==

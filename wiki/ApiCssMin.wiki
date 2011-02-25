@@ -1,6 +1,7 @@
 #sidebar Sidebar
 
 == _class_ !CssMin ==
+Static class for initialisation, autoloading and adapter methods for parsing and minifing css sources.
 ----
 
 === Constants ===

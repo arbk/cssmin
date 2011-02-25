@@ -1,4 +1,44 @@
 #sidebar Sidebar
 
 == _abstract class_ aCssMinifierPlugin ==
-coming soon...
+This class is the abstract definition of a minifier plugin. Every minifier plugin have to implement this class.
+
+Minifier plugin are used for one per one processing of [ApiTokensACssToken tokens] returned by the 
+[ApiParserCssParser CssParser] to change properties of the [ApiTokensACssToken token].
+----
+
+=== Constants ===
+_none_
+----
+
+=== Properties ===
+==== _protected_ `array` $configuration = array() ====
+The plugin configuration.
+----
+
+=== Properties ===
+==== _protected_ [ApiMinifierCssMinifier CssMinifier] $minifier = `null` ====
+Instance of the [ApiMinifierCssMinifier CssMinifier] of the filter.
+----
+	
+=== Methods ===
+==== `void` _public_ __construct([ApiMinifierCssMinifier CssMinifier] $minifier, `array` $configuration = array()) ====
+Constructor setting the instance of [ApiMinifierCssMinifier CssMinifier] and the plugin configuration.
+ * [ApiMinifierCssMinifier CssMinifier] $minifier : Instance of the [ApiMinifierCssMinifier CssMinifier]
+ * `array` $configuration : Filter configuration (optional)
+ * *Returns:* `void`
+----
+
+==== `integer` _abstract public_ apply(`array` &$token) ====
+Applys the plugin logic on the [ApiTokensACssToken token].
+
+If the method return `true` the minifier will continue with the next [ApiTokensACssToken token] and if returned `false` the 
+[ApiTokensACssToken token] will get handed over to the next minifier plugin.
+ * `array` $&$token : [ApiTokensACssToken token]
+ * *Returns:* `boolean` Amount of changed [ApiTokensACssToken tokens]
+----
+
+==== `array` _abstract public_ getTriggerTokens() ====
+Returns an array with token class names the plugin have to get called on. This avoids unnessasary calls to the plugin.
+ * *Returns:* `array` Array of token class name this plugin will trigger on
+----

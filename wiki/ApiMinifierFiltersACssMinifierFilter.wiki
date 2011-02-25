@@ -25,12 +25,12 @@ Instance of the [ApiMinifierCssMinifier CssMinifier] of the filter.
 ==== `void` _public_ __construct([ApiMinifierCssMinifier CssMinifier] $minifier, `array` $configuration = array()) ====
 Constructor setting the instance of [ApiMinifierCssMinifier CssMinifier] and the plugin configuration.
  * [ApiMinifierCssMinifier CssMinifier] $minifier : Instance of the [ApiMinifierCssMinifier CssMinifier]
- * `array` $configuration : Filter configuration [optional]
+ * `array` $configuration : Filter configuration (optional)
  * *Returns:* `void`
 ----
 
 ==== `integer` _abstract public_ apply(`array` &$tokens) ====
-Function to apply the filter on the array of [ApiTokensACssToken tokens].
+Applys the filter logic on the array of [ApiTokensACssToken tokens].
 
 Minifier filters have to implement this method and apply their filter logic on the array of [ApiTokensACssToken tokens].
 This method have to return the amount of modified (added, changed or removed) [ApiTokensACssToken tokens] as `integer`.

@@ -1,4 +1,35 @@
 #sidebar Sidebar
 
 == _class_ CssRemoveCommentsMinifierFilter _extends_ [ApiMinifierFiltersACssMinifierFilter aCssMinifierFilter] ==
-coming soon...
+This [ApiMinifierFiltersACssMinifierFilter minifier filter] remove all comments.
+----
+
+=== Constants ===
+_none_
+----
+
+=== Properties ===
+==== _protected_ `array` [ApiMinifierFiltersACssMinifierFilter#Properties aCssMinifierFilter::$configuration] = array() ====
+The filter configuration.
+----
+
+=== Properties ===
+==== _protected_ [ApiMinifierFiltersACssMinifierFilter#Properties aCssMinifierFilter::$minifier] = `null` ====
+Instance of the [ApiMinifierCssMinifier CssMinifier] of the filter.
+----
+	
+=== Methods ===
+==== `void` _public_ [ApiMinifierFiltersACssMinifierFilter#Methods aCssMinifierFilter::__construct]([ApiMinifierCssMinifier CssMinifier] $minifier, `array` $configuration = array()) ====
+Constructor setting the instance of [ApiMinifierCssMinifier CssMinifier] and the plugin configuration.
+ * [ApiMinifierCssMinifier CssMinifier] $minifier : Instance of [ApiMinifierCssMinifier CssMinifier]
+ * `array` $configuration : Filter configuration [optional]
+ * *Returns:* `void`
+----
+
+==== `void` _abstract public_ [ApiMinifierFiltersACssMinifierFilter#Methods aCssMinifierFilter::apply](`array` &$tokens) ====
+Applys the filter logic on the array of [ApiTokensACssToken tokens] and returns the amount of removed
+[ApiTokensCssCommentToken comment tokens] or 0 if no [ApiTokensCssCommentToken comment tokens] was found.
+ * `array` $&$tokens : Array of [ApiTokensACssToken tokens]
+ * *Returns:* `integer` Amount of added, changed or removed tokens; a return value large than 0 will rebuild the array
+----
+

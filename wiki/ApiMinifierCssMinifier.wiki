@@ -1,6 +1,7 @@
 #sidebar Sidebar
 
 == _class_ CssMinifier ==
+This class is used to minify a css source.
 ----
 
 === Constants ===
@@ -22,7 +23,7 @@ Minified css source.
 
 === Methods ===
 ==== `void` _public_ __construct(`string` $source = `null`, `array` $filters = `null`, `array` $plugins = `null`) ====
-Constructor setting the css source and filter and plugin configuration and create instances of every filter and plugin 
+Constructor setting the css source, filter and plugin configuration and create instances of every filter and plugin 
 defined in the configuration.
  * `string` $source : CSS source [optional]
  * `array` $filters : Filter configuration [optional]
