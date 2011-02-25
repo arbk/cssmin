@@ -1,4 +1,37 @@
 #sidebar Sidebar
 
-== _class_ CssRulesetDeclarationToken _extends_ [ApiTokensACssToken aCssToken] ==
+== _class_ !CssRulesetDeclarationToken _extends_ [ApiTokensACssToken aCssToken] ==
 coming soon...
+----
+
+=== Properties ===
+==== _public_ `boolean` $IsImportant = false ====
+Is the declaration flagged as important?
+----
+
+==== _public_ `boolean` $IsLast = false ====
+Is the declaration the last one of the ruleset or block?
+----
+
+==== _public_ `string` $Property = "" ====
+Property name of the declaration.
+----
+
+==== _public_ `string` $Value = "" ====
+Value of the declaration.
+----
+
+=== Methods ===
+==== `string` _public_ __construct(`string` $property, `string` $value, `boolean` $isImportant = false, `boolean` $isLast = false) ====
+Constructor setting the property name, value and the important and last flag of the token.
+ * `string` $property : Property name
+ * `string` $value : Value
+ * `boolean` $isImportant : Is flagged as important?
+ * `boolean` $isLast : Is the last one of the ruleset or block?
+ * *Returns:* `string`
+----
+
+==== `string` _public_ __toString() ====
+Implements [ApiTokensACssToken aCssToken::__toString()] and return the token as string.
+ * *Returns:* `string`
+----

@@ -1,4 +1,11 @@
 #sidebar Sidebar
 
-== _class_ CssAtFontFaceStartToken _extends_ [ApiTokensACssToken aCssToken] ==
+== _class_ !CssAtFontFaceStartToken _extends_ [ApiTokensACssToken aCssToken] ==
 coming soon...
+----
+
+=== Methods ===
+==== `string` _public_ __toString() ====
+Implements [ApiTokensACssToken aCssToken::__toString()] and return the token as string.
+ * *Returns:* `string`
+----

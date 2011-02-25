@@ -1,4 +1,22 @@
 #sidebar Sidebar
 
-== _class_ CssAtVariablesStartToken _extends_ [ApiTokensACssNullToken aCssNullToken] ==
+== _class_ !CssAtVariablesStartToken _extends_ [ApiTokensACssNullToken aCssNullToken] ==
 coming soon...
+----
+
+=== Properties ===
+==== _public_ `array` $MediaTypes = array() ====
+Media types.
+----
+
+=== Methods ===
+==== `void` _public_ __construct(`array` $mediaTypes = null) ====
+Constructor setting the media types of the token.
+ * `array` $mediaTypes : Media types (optional)
+ * *Returns:* `string`
+----
+
+==== `string` _public_ [ApiTokensACssNullToken#Methods aCssNullToken::__toString]() ====
+Implements [ApiTokensACssToken aCssToken::__toString()] and return the token as string.
+ * *Returns:* `string`
+----

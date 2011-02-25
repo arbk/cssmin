@@ -1,4 +1,10 @@
 #sidebar Sidebar
 
-== _class_ CssAtVariablesEndToken _extends_ [ApiTokensACssNullToken aCssNullToken] ==
+== _class_ !CssAtVariablesEndToken _extends_ [ApiTokensACssNullToken aCssNullToken] ==
 coming soon...
+----
+
+==== `string` _public_ [ApiTokensACssNullToken#Methods aCssNullToken::__toString]() ====
+Implements [ApiTokensACssToken aCssToken::__toString()] and return the token as string.
+ * *Returns:* `string`
+----

@@ -1,4 +1,51 @@
 #sidebar Sidebar
 
-== _class_ CssAtFontFaceParserPlugin _extends_ [ApiParserPluginsACssParserPlugin aCssParserPlugin] ==
+== _class_ !CssAtFontFaceParserPlugin _extends_ [ApiParserPluginsACssParserPlugin aCssParserPlugin] ==
 coming soon...
+----
+
+=== Properties ===
+==== _protected_ `string` [ApiParserPluginsACssParserPlugin#Properties aCssParserPlugin::$buffer] = "" ====
+The plugin buffer.
+----
+
+==== _protected_ `array` [ApiParserPluginsACssParserPlugin#Properties aCssParserPlugin::$configuration] = array() ====
+The plugin configuration.
+----
+
+==== _protected_ [ApiParserCssParser CssParser] [ApiParserPluginsACssParserPlugin#Properties aCssParserPlugin::$parser] = null ====
+Instance of the [ApiParserCssParser CssParser] of the plugin.
+----
+
+=== Methods ===
+==== `void` _public_ [ApiParserPluginsACssParserPlugin#Methods aCssParserPlugin::__construct]([ApiParserCssParser CssParser] $parser, `array` $configuration = array()) ====
+Constructor setting the instance of [ApiParserCssParser CssParser] and the plugin configuration.
+ * [ApiParserCssParser CssParser] $parser : Instance of the [ApiMinifierCssMinifier CssMinifier]
+ * `array` $configuration : Plugin configuration (optional)
+ * *Returns:* `void`
+----
+
+==== `array` _public_ getTriggerChars() ====
+Implements [ApiParserPluginsACssParserPlugin#Methods aCssParserPlugin::getTriggerChars()].
+
+Returns an array of chars the plugin have to get called on.
+ * *Returns:* `array`
+----
+
+==== `array` _public_ getTriggerStates() ====
+Implements [ApiParserPluginsACssParserPlugin#Methods aCssParserPlugin::getTriggerStates()].
+
+Returns an array of parser states the plugin have to get called on.
+ * *Returns:* `array`
+----
+
+==== `void` _public_ parse(`integer` $index, `string` $char, `string` $previousChar, `string` $state) ====
+Implements [ApiParserPluginsACssParserPlugin#Methods aCssParserPlugin::parse()].
+
+This method implements the call to the parser.
+ * `integer` $index : Current parser index
+ * `string` $char : Current char
+ * `string` $previousChar : Previous char
+ * `string` $state : Current parser state
+ * *Returns:* `void`
+----

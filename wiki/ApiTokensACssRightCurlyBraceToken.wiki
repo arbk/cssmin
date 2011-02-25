@@ -1,4 +1,10 @@
 #sidebar Sidebar
 
-== _abstract class_ aCssRightCurlyBraceToken _extends_ [ApiTokensACssToken aCssToken] ==
+== _class_ aCssRightCurlyBraceToken _extends_ [ApiTokensACssToken aCssToken] ==
 coming soon...
+----
+
+==== `string` _public_ __toString() ====
+Implements [ApiTokensACssToken aCssToken::__toString()] and return the token as string.
+ * *Returns:* `string`
+----

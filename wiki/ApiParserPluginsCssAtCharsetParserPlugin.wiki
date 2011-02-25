@@ -1,6 +1,6 @@
 #sidebar Sidebar
 
-== _abstract class_ !CssAtCharsetParserPlugin _extends_ [ApiParserPluginsACssParserPlugin aCssParserPlugin] ==
+== _class_ !CssAtCharsetParserPlugin _extends_ [ApiParserPluginsACssParserPlugin aCssParserPlugin] ==
 @todo
 ----
 

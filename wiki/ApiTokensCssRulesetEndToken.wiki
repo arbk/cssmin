@@ -1,4 +1,10 @@
 #sidebar Sidebar
 
-== _class_ CssRulesetEndToken _extends_ [ApiTokensACssRightCurlyBraceToken aCssRightCurlyBraceToken] ==
+== _class_ !CssRulesetEndToken _extends_ [ApiTokensACssRightCurlyBraceToken aCssRightCurlyBraceToken] ==
 coming soon...
+----
+
+==== `string` _public_ [ApiTokensACssRightCurlyBraceToken#Methods aCssRightCurlyBraceToken::__toString]() ====
+Implements [ApiTokensACssToken aCssToken::__toString()] and return the token as string.
+ * *Returns:* `string`
+----
