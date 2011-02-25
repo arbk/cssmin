@@ -36,13 +36,11 @@
  * [ApiIndex API Documentation]
     * [ApiCssMin CssMin]
     * [ApiCssError CssError]
-    * Formatter
-       * [ApiFormatterACssFormatter aCssFormatter]
+    * [ApiFormatterACssFormatter aCssFormatter]
        * [ApiFormatterCssOtbsFormatter CssOtbsFormatter]
        * [ApiFormatterCssWhitesmithsFormatter CssWhitesmithsFormatter]
     * [ApiMinifierCssMinifier CssMinifier]
-       * Filters
-          * [ApiMinifierFiltersACssMinifierFilter aCssMinifierFilter]
+       * [ApiMinifierFiltersACssMinifierFilter aCssMinifierFilter]
           * [ApiMinifierFiltersCssConvertLevel3PropertiesMinifierFilter CssConvertLevel3PropertiesMinifierFilter]
           * [ApiMinifierFiltersCssImportImportsMinifierFilter CssImportImportsMinifierFilter]
           * [ApiMinifierFiltersCssRemoveCommentsMinifierFilter CssRemoveCommentsMinifierFilter]
@@ -50,8 +48,7 @@
           * [ApiMinifierFiltersCssRemoveEmptyRulesetsMinifierFilter CssRemoveEmptyRulesetsMinifierFilter]
           * [ApiMinifierFiltersCssRemoveLastDelarationSemiColonMinifierFilter CssRemoveLastDelarationSemiColonMinifierFilter]
           * [ApiMinifierFiltersCssVariablesMinifierFilter CssVariablesMinifierFilter]
-       * Plugins
-          * [ApiMinifierPluginsACssMinifierPlugin aCssMinifierPlugin]
+       * [ApiMinifierPluginsACssMinifierPlugin aCssMinifierPlugin]
           * [ApiMinifierPluginsCssCompressColorValuesMinifierPlugin CssCompressColorValuesMinifierPlugin]
           * [ApiMinifierPluginsCssCompressExpressionValuesMinifierPlugin CssCompressExpressionValuesMinifierPlugin]
           * [ApiMinifierPluginsCssCompressUnitValuesMinifierPlugin CssCompressUnitValuesMinifierPlugin]
@@ -61,8 +58,7 @@
           * [ApiMinifierPluginsCssConvertRgbColorsMinifierPlugin CssConvertRgbColorsMinifierPlugin]
           * [ApiMinifierPluginsCssVariablesMinifierPlugin CssVariablesMinifierPlugin]
     * [ApiParserCssParser CssParser]
-       * Plugins
-          * [ApiParserPluginsACssParserPlugin aCssParserPlugin]
+       * [ApiParserPluginsACssParserPlugin aCssParserPlugin]
           * [ApiParserPluginsAtCharsetParserPlugin AtCharsetParserPlugin]
           * [ApiParserPluginsCssAtFontFaceParserPlugin CssAtFontFaceParserPlugin]
           * [ApiParserPluginsCssAtImportParserPlugin CssAtImportParserPlugin]
@@ -74,8 +70,7 @@
           * [ApiParserPluginsCssRulesetParserPlugin CssRulesetParserPlugin]
           * [ApiParserPluginsCssStringParserPlugin CssStringParserPlugin]
           * [ApiParserPluginsCssUrlParserPlugin CssUrlParserPlugin]
-    * Tokens
-       * [ApiTokensACssToken aCssToken]
+    * [ApiTokensACssToken aCssToken]
        * [ApiTokensACssNullToken aCssNullToken]
        * [ApiTokensACssRightCurlyBraceToken aCssRightCurlyBraceToken]
        * [ApiTokensCssAtCharsetToken CssAtCharsetToken]
