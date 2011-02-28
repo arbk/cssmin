@@ -3,7 +3,7 @@
 = !ConvertLevel3Properties minifier filter =
 
 == Description ==
-This filter convert [#Supported properties CSS Level 3 properties] (and some browser specific properties) to browser specific counterparts.
+This filter convert [MinifierFilterConvertLevel3Properties#Supported_properties CSS Level 3 properties] (and some browser specific properties) to browser specific counterparts.
 
 == Configuration: ==
  * `true` / `false`
