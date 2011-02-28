@@ -8,7 +8,7 @@ This [ApiTokensACssToken aCssToken] represents the start of a @page at-rule bloc
 ----
 
 === Properties ===
-==== _public_ `string` $Selector = ""s ====
+==== _public_ `string` $Selector = "" ====
 Selectors.
 ----
 

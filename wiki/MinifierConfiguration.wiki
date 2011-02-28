@@ -22,6 +22,7 @@ $filters = array
 	"RemoveComments"		=> true, 
 	"RemoveEmptyRulesets"		=> true,
 	"RemoveEmptyAtBlocks"		=> true,
+	"ConvertLevel3AtKeyframes"	=> array("RemoveSource" => false),
 	"ConvertLevel3Properties"	=> true,
 	"Variables"			=> true,
 	"RemoveLastDelarationSemiColon"	=> true
@@ -36,6 +37,7 @@ $filters = array
 	"RemoveComments"		=> true, 
 	"RemoveEmptyRulesets"		=> true,
 	"RemoveEmptyAtBlocks"		=> true,
+	"ConvertLevel3AtKeyframes"	=> false,
 	"ConvertLevel3Properties"	=> false,
 	"Variables"			=> true,
 	"RemoveLastDelarationSemiColon"	=> true

@@ -1,0 +1,10 @@
+#sidebar Sidebar
+
+== _class_ !CssAtKeyframesRulesetEndToken _extends_ [ApiTokensACssRightCurlyBraceToken aCssRightCurlyBraceToken] ==
+This [ApiTokensACssToken aCssToken] represents the end of a @keyframes at-rule ruleset.
+----
+
+==== `string` _public_ [ApiTokensACssRightCurlyBraceToken#Methods aCssRightCurlyBraceToken::__toString]() ====
+Implements [ApiTokensACssToken aCssToken::__toString()] and return the token as string.
+ * *Returns:* `string`
+----

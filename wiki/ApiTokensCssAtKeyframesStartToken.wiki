@@ -1,0 +1,25 @@
+#sidebar Sidebar
+
+== _class_ !CssAtKeyframesStartToken _extends_ [ApiTokensACssToken aCssToken] ==
+This [ApiTokensACssToken aCssToken] represents the start of a @keyframes at-rule block.
+{{{
+@keyframes "myName" {...
+}}}
+----
+
+=== Properties ===
+==== _public_ `string` $Name = "" ====
+Name of the animation.
+----
+
+=== Methods ===
+==== `void` _public_ __construct(`string` $name) ====
+Constructor setting the name of the token.
+ * `string` $name : Name of the animation
+ * *Returns:* `string`
+----
+
+==== `string` _public_ __toString() ====
+Implements [ApiTokensACssToken aCssToken::__toString()] and return the token as string.
+ * *Returns:* `string`
+----
