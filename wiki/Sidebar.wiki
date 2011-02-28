@@ -64,6 +64,7 @@
           * [ApiParserPluginsCssAtCharsetParserPlugin CssAtCharsetParserPlugin]
           * [ApiParserPluginsCssAtFontFaceParserPlugin CssAtFontFaceParserPlugin]
           * [ApiParserPluginsCssAtImportParserPlugin CssAtImportParserPlugin]
+          * [ApiParserPluginsCssAtKeyframesParserPlugin CssAtKeyframesParserPlugin]
           * [ApiParserPluginsCssAtMediaParserPlugin CssAtMediaParserPlugin]
           * [ApiParserPluginsCssAtPageParserPlugin CssAtPageParserPlugin]
           * [ApiParserPluginsCssAtVariablesParserPlugin CssAtVariablesParserPlugin]
