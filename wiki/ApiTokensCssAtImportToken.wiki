@@ -1,7 +1,7 @@
 #sidebar Sidebar
 
 == _class_ !CssAtImportToken _extends_ [ApiTokensACssToken aCssToken] ==
-This [ApiTokensACssToken aCssToken] represents a @import at-rule.s
+This [ApiTokensACssToken aCssToken] represents a @import at-rule.
 {{{
 @import "path/to/external.css" screen, projection;
 }}}

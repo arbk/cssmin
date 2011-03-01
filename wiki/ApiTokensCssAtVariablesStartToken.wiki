@@ -1,6 +1,6 @@
 #sidebar Sidebar
 
-== _class_ !CssAtVariablesStartToken _extends_ [ApiTokensACssNullToken aCssNullToken] ==
+== _class_ !CssAtVariablesStartToken _extends_ [ApiTokensACssAtBlockStartToken aCssAtBlockStartToken] ==
 This [ApiTokensACssToken aCssToken] represents the start of a @variables at-rule block.
 {{{
 @variables print {...
@@ -19,7 +19,7 @@ Constructor setting the media types of the token.
  * *Returns:* `string`
 ----
 
-==== `string` _public_ [ApiTokensACssNullToken#Methods aCssNullToken::__toString]() ====
+==== `string` _public_ __toString() ====
 Implements [ApiTokensACssToken aCssToken::__toString()] and return the token as string.
  * *Returns:* `string`
 ----

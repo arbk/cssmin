@@ -1,6 +1,6 @@
 #sidebar Sidebar
 
-== _class_ !CssAtMediaStartToken _extends_ [ApiTokensACssToken aCssToken] ==
+== _class_ !CssAtMediaStartToken _extends_ [ApiTokensACssAtBlockStartToken aCssAtBlockStartToken] ==
 This [ApiTokensACssToken aCssToken] represents the start of a @media at-rule block.
 {{{
 @media screen, projection {...

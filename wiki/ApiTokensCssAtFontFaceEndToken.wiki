@@ -1,10 +1,10 @@
 #sidebar Sidebar
 
-== _class_ !CssAtFontFaceEndToken _extends_ [ApiTokensACssRightCurlyBraceToken aCssRightCurlyBraceToken] ==
+== _class_ !CssAtFontFaceEndToken _extends_ [ApiTokensACssAtBlockEndToken aCssAtBlockEndToken] ==
 This [ApiTokensACssToken aCssToken] represents the end of a @font-face at-rule block.
 ----
 
-==== `string` _public_ [ApiTokensACssRightCurlyBraceToken#Methods aCssRightCurlyBraceToken::__toString]() ====
+==== `string` _public_ [[ApiTokensACssAtBlockEndToken#Methods aCssAtBlockEndToken::__toString]() ====
 Implements [ApiTokensACssToken aCssToken::__toString()] and return the token as string.
  * *Returns:* `string`
 ----

@@ -1,6 +1,6 @@
 #sidebar Sidebar
 
-== _class_ !CssRulesetStartToken _extends_ [ApiTokensACssToken aCssToken] ==
+== _class_ !CssRulesetStartToken _extends_ [ApiTokensACssRulesetStartToken aCssRulesetStartToken] ==
 This [ApiTokensACssToken aCssToken] represents the start of a ruleset.
 {{{
 div.myClass {...

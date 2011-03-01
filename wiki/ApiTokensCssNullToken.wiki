@@ -1,10 +1,10 @@
 #sidebar Sidebar
 
-== _class_ !CssNullToken _extends_ [ApiTokensACssNullToken aCssNullToken] ==
+== _class_ !CssNullToken _extends_ [ApiTokensACssToken aCssToken] ==
 This [ApiTokensACssToken aCssToken] is a helper token with no output.
 ----
 
-==== `string` _public_ [ApiTokensACssNullToken#Methods aCssNullToken::__toString]() ====
+==== `string` _public_ __toString() ====
 Implements [ApiTokensACssToken aCssToken::__toString()] and return the token as string.
  * *Returns:* `string`
 ----

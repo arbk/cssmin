@@ -1,0 +1,5 @@
+#sidebar Sidebar
+
+== _class_ aCssRulesetStartToken _extends_ [ApiTokensACssToken aCssToken] ==
+Abstract definition of a [ApiTokensACssToken aCssToken] for ruleset start.
+----

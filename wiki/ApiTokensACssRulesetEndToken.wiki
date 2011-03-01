@@ -1,7 +1,7 @@
 #sidebar Sidebar
 
-== _class_ aCssNullToken _extends_ [ApiTokensACssToken aCssToken] ==
-Abstract definition of a [ApiTokensACssToken aCssToken] with no output.
+== _class_ aCssRulesetEndToken _extends_ [ApiTokensACssToken aCssToken] ==
+Abstract definition of a [ApiTokensACssToken aCssToken] for ruleset end.
 ----
 
 ==== `string` _public_ __toString() ====

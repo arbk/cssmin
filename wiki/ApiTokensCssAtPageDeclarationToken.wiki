@@ -1,28 +1,28 @@
 #sidebar Sidebar
 
-== _class_ !CssAtPageDeclarationToken _extends_ [ApiTokensACssToken aCssToken] ==
+== _class_ !CssAtPageDeclarationToken _extends_ [ApiTokensACssDeclarationToken aCssDeclarationToken] ==
 This [ApiTokensACssToken aCssToken] represents a declaration in a @page at-rule block.
 ----
 
 === Properties ===
-==== _public_ `boolean` $IsImportant = false ====
+==== _public_ `boolean` [ApiTokensACssDeclarationToken#Properties aCssDeclarationToken::$IsImportant] = false ====
 Is the declaration flagged as important?
 ----
 
-==== _public_ `boolean` $IsLast = false ====
+==== _public_ `boolean` [ApiTokensACssDeclarationToken#Properties aCssDeclarationToken::$IsLast] = false ====
 Is the declaration the last one of the ruleset or block?
 ----
 
-==== _public_ `string` $Property = "" ====
+==== _public_ `string` [ApiTokensACssDeclarationToken#Properties aCssDeclarationToken::$Property] = "" ====
 Property name of the declaration.
 ----
 
-==== _public_ `string` $Value = "" ====
+==== _public_ `string` [ApiTokensACssDeclarationToken#Properties aCssDeclarationToken::$Value] = "" ====
 Value of the declaration.
 ----
 
 === Methods ===
-==== `string` _public_ __construct(`string` $property, `string` $value, `boolean` $isImportant = false, `boolean` $isLast = false) ====
+==== `string` _public_ [ApiTokensACssDeclarationToken aCssDeclarationToken::__construct](`string` $property, `string` $value, `boolean` $isImportant = false, `boolean` $isLast = false) ====
 Constructor setting the property name, value and the important and last flag of the token.
  * `string` $property : Property name
  * `string` $value : Value
@@ -31,7 +31,7 @@ Constructor setting the property name, value and the important and last flag of 
  * *Returns:* `string`
 ----
 
-==== `string` _public_ __toString() ====
+==== `string` _public_ [ApiTokensACssDeclarationToken aCssDeclarationToken::__toString]() ====
 Implements [ApiTokensACssToken aCssToken::__toString()] and return the token as string.
  * *Returns:* `string`
 ----

@@ -1,6 +1,6 @@
 #sidebar Sidebar
 
-== _class_ !CssAtKeyframesRulesetStartToken _extends_ [ApiTokensACssToken aCssToken] ==
+== _class_ !CssAtKeyframesRulesetStartToken _extends_ [ApiTokensACssRulesetStartToken aCssRulesetStartToken] ==
 This [ApiTokensACssToken aCssToken] represents the start of a @keyframes at-rule ruleset.
 
 ----
