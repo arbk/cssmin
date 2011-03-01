@@ -1,14 +1,11 @@
 #sidebar Sidebar
 
 == _class_ !CssError ==
-This is a helper class to format an error message.
+This is a helper class used to format an error message.
+
 {{{
 trigger_error(new CssError("Unterminated ruleset declaration", "padding: 5px_"), E_USER_WARNING);
 }}}
-----
-
-=== Constants ===
-_none_
 ----
 
 === Properties ===
@@ -17,18 +14,18 @@ Error message.
 ----
 
 ==== public_ `string` $Source = "" ====
-Corresponding source.
+Corresponding source of the error.
 ----
 
 === Methods ===
 ==== `void` _public_ __construct(`string` $message, `string` $source = "") ====
 Constructor setting the error message and corresponding source.
  * `string` $message : Error message
- * `string` $source : Corresponding source (optional)
+ * `string` $source : Corresponding source of the error (optional)
  * *Returns:* `void`
 ----
 
-==== `void` _public_ __toString() ====
+==== `string` _public_ __toString() ====
 Returns the error as formatted string.
  * *Returns:* `string`
 ----

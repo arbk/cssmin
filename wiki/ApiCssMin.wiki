@@ -2,10 +2,7 @@
 
 == _class_ !CssMin ==
 Static class for initialisation, autoloading and adapter methods for parsing and minifing css sources.
-----
 
-=== Constants ===
-_none_
 ----
 
 === Properties ===
@@ -15,24 +12,61 @@ Index of classes used for autoloading.
 
 === Methods ===
 ==== `void` _public_ autoload(`string` $class) ====
-[http://goo.gl/JrW54 Autoload] function of !CssMin.
+[http://goo.gl/JrW54 Autoload] function of !CssMin (only used by the source version).
  * `string` $class : Name of the class
  * *Returns:* `void`
 ----
 
 ==== `string` _public static_ build(`string` $target = "") ====
-Create a build version of !CssMin.
- * `type` $target : Path including file name were the build version should be saved (optional)
+Create a build version of !CssMin (only useable in the source version).
+{{{
+CssMin::build("path/to/target.php");
+// Equals to
+file_put_contents("path/to/target.php", CssMin::build());
+}}}
+ * `type` $target : Target file (optional)
  * *Returns:* `string` Build version as string
 ----
 
 ==== `void` _public static_ initialise() ====
-Initialises CssMin.
+Initialises !CssMin. Will get called automatically if the file `CssMin.php` gets included.
  * *Returns:* `void`
 ----
 
 ==== `string` _public static_ minify(`string` $source, `array` $filters = `null`, `array` $plugins = `null`) ====
-Minifies CSS source.
+Adapter method to use the [ApiMinifierCssMinifier CssMinifier] to minify a css source.
+{{{
+// Simple example
+$source = file_get_contents("path/to/source.css");
+$minified = CssMin::minify($source);
+// Equals to
+$minifier = new CssMinifer($source);
+$minified = $minifier->getMinified();
+// Example with full configuration
+$filterConfig = array
+	(
+	"ImportImports"					=> array("BasePath" => "path/to/base"),
+	"RemoveComments"				=> true, 
+	"RemoveEmptyRulesets"			=> true,
+	"RemoveEmptyAtBlocks"			=> true,
+	"ConvertLevel3Properties"		=> true,
+	"ConvertLevel3AtKeyframes"		=> array("RemoveSource" => false),
+	"Variables"						=> true,
+	"RemoveLastDelarationSemiColon"	=> true
+	);
+$pluginConfig = array
+	(
+	"Variables"						=> true,
+	"ConvertFontWeight"				=> true,
+	"ConvertHslColors"				=> true,
+	"ConvertRgbColors"				=> true,
+	"ConvertNamedColors"			=> true,
+	"CompressColorValues"			=> true,
+	"CompressUnitValues"			=> true,
+	"CompressExpressionValues"		=> true
+	);
+$minified = CssMin::minify($source, $filterConfig, $pluginConfig);
+}}}
  * `string` $source : CSS source
  * `array` $filters : Filter configuration
  * `array` $plugins : Plugin configuration
@@ -40,8 +74,32 @@ Minifies CSS source.
 ----
 
 ==== `array` _public static_ parse(`string` $source) ====
-Parse the CSS source.
-Description
+Adapter method to use the [ApiParserCssParser CssParser] to parse a css source.
+{{{
+// Simple example
+$source = file_get_contents("path/to/source.css");
+$tokens = CssMin::parse($source);
+// Equals to
+$parser = new CssParse($source);
+$tokens = $parser->getTokens();
+// Example with full configuration
+$pluginConfig = array
+	(
+	"Comment"		=> true,
+	"String"		=> true,
+	"Url"			=> true,
+	"Expression"	=> true,
+	"Ruleset"		=> true,
+	"AtCharset"		=> true,
+	"AtFontFace"	=> true,
+	"AtImport"		=> true,
+	"AtKeyframes"	=> true,
+	"AtMedia"		=> true,
+	"AtPage"		=> true,
+	"AtVariables"	=> true
+	);
+tokens = CssMin::parse($source, $pluginConfig);
+}}}
  * `string` $source : CSS source
  * `array` $plugins : Plugin configuration
  * *Returns:* `array` Array of [ApiTokensACssToken aCssToken]
