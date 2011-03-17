@@ -1,7 +1,7 @@
 #sidebar Sidebar
 
 == _abstract class_ aCssMinifierPlugin ==
-This class is the abstract definition of a minifier plugin. Every minifier plugin have to implement this class.
+This class is the abstract definition of a minifier plugin every minifier plugin have to implement.
 
 Minifier plugin are used for one per one processing of [ApiTokensACssToken tokens] returned by the 
 [ApiParserCssParser CssParser] to change properties of the [ApiTokensACssToken token].
@@ -27,8 +27,8 @@ Constructor setting the instance of [ApiMinifierCssMinifier CssMinifier] and the
 ==== `boolean` _abstract public_ apply(`array` &$token) ====
 Applys the plugin logic on the [ApiTokensACssToken token].
 
-If the method return `true` the minifier will continue with the next [ApiTokensACssToken token] and if returned `false` the 
-[ApiTokensACssToken token] will get handed over to the next minifier plugin.
+If the method return `true` the minifier will continue with the next [ApiTokensACssToken token] and if returned `false` 
+the [ApiTokensACssToken token] will get handed over to the next minifier plugin.
  * `array` &$token : [ApiTokensACssToken token]
  * *Returns:* `boolean` `true to continue with the next token, `false` to hand over the current token to the next plugin
 ----

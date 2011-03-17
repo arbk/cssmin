@@ -1,7 +1,7 @@
 #sidebar Sidebar
 
 == _abstract class_ aCssMinifierFilter ==
-This class is the abstract definition of a minifier filter. Every minifier filter have to implement this class.
+This class is the abstract definition of a minifier filter every minifier filter have to implement.
 
 Minifier filters are used for pre-processing the array of [ApiTokensACssToken tokens] returned by the 
 [ApiParserCssParser CssParser] to add, remove or change [ApiTokensACssToken tokens].
@@ -32,7 +32,6 @@ This method have to return the amount of modified (added, changed or removed) [A
 If the return value is larger than 0 the array will get rebuild by the [ApiMinifierCssMinifier CssMinifier].
 
 To remove a [ApiTokensACssToken token] you only have to set the index to `null`.
-
  * `array` &$tokens : Array of [ApiTokensACssToken tokens]
  * *Returns:* `integer` Amount of changed [ApiTokensACssToken tokens]
 ----

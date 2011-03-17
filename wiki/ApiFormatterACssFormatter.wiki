@@ -1,6 +1,7 @@
 #sidebar Sidebar
 
 == _abstract class_ aCssFormatter ==
+Abstract definition of a css formatter.
 ----
 
 === Properties ===
@@ -9,11 +10,11 @@ Indent string.
 ----
 
 ==== _protected_ `integer` $padding = 0 ====
-Indent string.
+Declaration value padding
 ----
 
 ==== _protected_ `array` $tokens = array() ====
-Array of tokens.
+Array of [ApiTokensACssToken tokens].
 ----
 
 === Methods ===

@@ -2,6 +2,15 @@
 
 == _class_ !CssWhitesmithsFormatter _extends_ [ApiFormatterACssFormatter aCssFormatter] ==
 This Formatter return an array of [ApiTokensACssToken tokens] fromatted in [http://goo.gl/etzLs Whitesmiths indent style].
+{{{
+// Get parser tokens
+$source = file_get_contents("path/to/source.css");
+$tokens = CssMin::parse($source);
+// Create the formatter with TAB as indent char and a declaration value padding of 32
+$formatter = new CssWhitesmithsFormatter(tokens, "\t", 32);
+// Print the formatted source
+echo "<pre>" . $formatter . "</pre>";
+}}}
 ----
 
 === Properties ===
@@ -10,11 +19,11 @@ Indent string.
 ----
 
 ==== _protected_ `integer` [ApiFormatterACssFormatter#Properties aCssFormatter::$padding] = 0 ====
-Indent string.
+Declaration value padding
 ----
 
 ==== _protected_ `array` [ApiFormatterACssFormatter#Properties aCssFormatter::$tokens] = array() ====
-Array of tokens.
+Array of [ApiTokensACssToken tokens].
 ----
 
 === Methods ===
@@ -27,6 +36,6 @@ Constructor setting the [ApiTokensACssToken tokens] and the indent string and de
 ----
 
 ==== `string` _abstract public_ [ApiFormatterACssFormatter#Methods aCssFormatter::__toString()] ====
-Returns the [ApiTokensACssToken Tokens] as formatted string.
+Implements [ApiFormatterACssFormatter#Methods aCssFormatter::__toString()]. Returns the [ApiTokensACssToken Tokens] as formatted string.
  * *Returns:* `string`
 ----

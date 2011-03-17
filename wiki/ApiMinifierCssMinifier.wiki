@@ -2,15 +2,44 @@
 
 == _class_ !CssMinifier ==
 This class is used to minify a css source.
+{{{
+// Simple example
+$minifier = new CssMinifer($source);
+$minified = $minifier->getMinified();
+// Example with full configuration
+$filterConfig = array
+	(
+	"ImportImports"			=> array("BasePath" => "path/to/base"),
+	"RemoveComments"		=> true, 
+	"RemoveEmptyRulesets"		=> true,
+	"RemoveEmptyAtBlocks"		=> true,
+	"ConvertLevel3Properties"	=> true,
+	"ConvertLevel3AtKeyframes"	=> array("RemoveSource" => false),
+	"Variables"			=> true,
+	"RemoveLastDelarationSemiColon"	=> true
+	);
+$pluginConfig = array
+	(
+	"Variables"			=> true,
+	"ConvertFontWeight"		=> true,
+	"ConvertHslColors"		=> true,
+	"ConvertRgbColors"		=> true,
+	"ConvertNamedColors"		=> true,
+	"CompressColorValues"		=> true,
+	"CompressUnitValues"		=> true,
+	"CompressExpressionValues"	=> true
+	);
+$minified = CssMin::minify($source, $filterConfig, $pluginConfig);
+}}}
 ----
 
 === Properties ===
 ==== _protected_ `array` $filters = array() ====
-Array of [aCssMinifierFilter minifier filters].
+Array of [aCssMinifierFilter filters].
 ----
 
 ==== _protected_ `array` $plugins = array() ====
-Array of [aCssMinifierPlugins minifier plugins].
+Array of [aCssMinifierPlugins plugins].
 ----
 
 ==== _protected_ `string` $minified = "" ====
@@ -19,21 +48,21 @@ Minified css source.
 
 === Methods ===
 ==== `void` _public_ __construct(`string` $source = `null`, `array` $filters = `null`, `array` $plugins = `null`) ====
-Constructor setting the css source, filter and plugin configuration and create instances of every filter and plugin 
-defined in the configuration.
- * `string` $source : CSS source [optional]
+Constructor setting the css source, filter and plugin configuration and create instances of every 
+[aCssMinifierFilter filter] and [aCssMinifierPlugins plugin] defined in the configuration.
+ * `string` $source : Css source [optional]
  * `array` $filters : Filter configuration [optional]
  * `array` $plugins : Plugin configuration [optional]
  * *Returns:* `void`
 ----
 
 ==== `string` _public_ getMinified() ====
-Returns the minified Source.
+Returns the minified source.
  * *Returns:* `string`
 ----
 
 ==== `string` _public_ minify(`string` $source) ====
-Minifies the CSS source.
- * `string` $source : CSS sources
+Minifies the css source.
+ * `string` $source : Css sources
  * *Returns:* `string`
 ----

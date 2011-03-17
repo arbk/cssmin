@@ -7,6 +7,7 @@ and [ApiTokensCssRulesetDeclarationToken CssRulesetDeclarationToken] and insert 
 
 *Example:*
 {{{
+// Simple Example
 @variables
 	{
 	defaultFontColor: #444444;
@@ -16,6 +17,13 @@ div.Test
 	{
 	color: var(defaultFontColor);
 	border: 1px solid var(defaultBorderColor);
+	}
+// Variables used in @variables block
+@variables
+	{
+	defaultBorderStyle:		1px solid;
+	defaultBorderColor:		black;
+	defaultBorder:			var(defaultBorderStyle) var(defaultBorderColor);
 	}
 }}}
 

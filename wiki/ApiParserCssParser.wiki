@@ -1,8 +1,33 @@
 #sidebar Sidebar
 
 == _class_ !CssParser ==
-@todo
+This class is used to parse a css source and return a array of [ApiTokensACssToken tokens].
 
+{{{
+// Simple example
+$source = file_get_contents("path/to/source.css");
+$tokens = CssMin::parse($source);
+// Equals to
+$parser = new CssParse($source);
+$tokens = $parser->getTokens();
+// Example with full configuration
+$pluginConfig = array
+	(
+	"Comment"			=> true,
+	"String"			=> true,
+	"Url"				=> true,
+	"Expression"			=> true,
+	"Ruleset"			=> true,
+	"AtCharset"			=> true,
+	"AtFontFace"			=> true,
+	"AtImport"			=> true,
+	"AtKeyframes"			=> true,
+	"AtMedia"			=> true,
+	"AtPage"			=> true,
+	"AtVariables"			=> true
+	);
+tokens = CssMin::parse($source, $pluginConfig);
+}}}
 ----
 
 === Properties ===
@@ -45,7 +70,7 @@ The [ApiTokensACssToken tokens] parsed by the parser.
 === Methods ===
 ==== `void` _public_ __construct(`string` $source = null, `array` $plugins = null) ====
 Constructor setting the css source and plugin configuration. Creates instances of every configured plugin.
- * `string` $source : CSS source (optional)
+ * `string` $source : Css source (optional)
  * `array` $plugins : Plugin configuration (optional)
  * *Returns:* `void`
 ----
@@ -53,6 +78,9 @@ Constructor setting the css source and plugin configuration. Creates instances o
 ==== `void` _public_ appendToken([ApiTokensACssToken aCssToken] $token) ====
 Appends a [ApiTokensACssToken aCssToken] to the array of parsed [ApiTokensACssToken tokens]. This method is used 
 by [ApiParserPluginsACssParserPlugin parser plugins] to add [ApiTokensACssToken tokens].
+{{{
+$this->parser->appendToken(new CssCommentToken("/* This is a comment */"));
+}}}
  * [ApiTokensACssToken aCssToken] $token : Token to append
  * *Returns:* `void`
 ----
@@ -92,7 +120,10 @@ Returns the current parser state.
 ----
 
 ==== [ApiParserPluginsACssParserPlugin aCssParserPlugin] _public_ getPlugin(`string` $class) ====
-Returns a  [ApiParserPluginsACssParserPlugin plugin] by class name of the plugin.
+Returns a [ApiParserPluginsACssParserPlugin plugin] by class name of the plugin.
+{{{
+$commentPlugin = $this->parser->getPlugin("CssCommentParserPlugin");
+}}}
  * `string` $class : The class name of the plugin
  * *Returns:* [ApiParserPluginsACssParserPlugin aCssParserPlugin]
 ----
@@ -104,6 +135,12 @@ Return the parsed [ApiTokensACssToken tokens].
 
 ==== `boolean` _public_ isState(`string` $state) ====
 Tests if a state equals the current parser state.
+{{{
+if ($this->parser->isState("T_DOCUMENT"))
+	{
+	// do something
+	}
+}}}
  * `string` $state : The state to compare with the current parser state
  * *Returns:* `boolean` : `true` if $state equals the current parser state; `false` if not 
 ----

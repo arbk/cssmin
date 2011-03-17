@@ -2,6 +2,15 @@
 
 == _class_ !CssRemoveCommentsMinifierFilter _extends_ [ApiMinifierFiltersACssMinifierFilter aCssMinifierFilter] ==
 This [ApiMinifierFiltersACssMinifierFilter minifier filter] remove all comments.
+
+*Example:*
+{{{
+/* This is a comment */
+}}}
+*Will get coverted to:*
+{{{
+null
+}}}
 ----
 
 === Properties ===
@@ -17,7 +26,7 @@ Instance of the [ApiMinifierCssMinifier CssMinifier] of the filter.
 ==== `void` _public_ [ApiMinifierFiltersACssMinifierFilter#Methods aCssMinifierFilter::__construct]([ApiMinifierCssMinifier CssMinifier] $minifier, `array` $configuration = array()) ====
 Constructor setting the instance of [ApiMinifierCssMinifier CssMinifier] and the plugin configuration.
  * [ApiMinifierCssMinifier CssMinifier] $minifier : Instance of [ApiMinifierCssMinifier CssMinifier]
- * `array` $configuration : Filter configuration [optional]
+ * `array` $configuration : Filter configuration (optional)
  * *Returns:* `void`
 ----
 
