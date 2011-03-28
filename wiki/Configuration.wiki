@@ -41,6 +41,11 @@ div{color:black;width:100%}
 === Defaults to: `true` ===
 ----
 
+== remove-comments ==
+Remove comments. If set to `false` the minified output will include comments.
+=== Defaults to: `true` ===
+----
+
 == convert-css3-properties ==
 CSS3 properties will get translated to their browser specific counterparts.
 
