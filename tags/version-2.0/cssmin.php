@@ -16,7 +16,7 @@
  * @author		Joe Scylla <joe.scylla@gmail.com>
  * @copyright	2008 - 2011 Joe Scylla <joe.scylla@gmail.com>
  * @license		http://opensource.org/licenses/mit-license.php MIT License
- * @version		2.0.2.1 (2011-02-18)
+ * @version		2.0.2.2 (2011-03-28)
  */
 class CssMin
 	{
@@ -210,6 +210,7 @@ class CssMin
 		"remove-empty-blocks"			=> true,
 		"remove-empty-rulesets"			=> true,
 		"remove-last-semicolons"		=> true,
+		"remove-comments"				=> true,
 		"convert-css3-properties"		=> false,
 		"convert-font-weight-values"	=> false,
 		"convert-named-color-values"	=> false,
@@ -605,6 +606,7 @@ class CssMin
 		$sRemoveEmptyBlocks				= $config["remove-empty-blocks"];
 		$sRemoveEmptyRulesets			= $config["remove-empty-rulesets"];
 		$sRemoveLastSemicolon			= $config["remove-last-semicolons"];
+		$sRemoveComments				= $config["remove-comments"];
 		$sConvertCss3Properties 		= $config["convert-css3-properties"];
 		$sCss3Variables					= array();
 		$sConvertFontWeightValues		= $config["convert-font-weight-values"];
@@ -633,7 +635,7 @@ class CssMin
 		$sImportStatementTokens 		= array(self::T_AT_RULE, self::T_AT_IMPORT);
 		$sImportMediaEndToken			= array(self::T_AT_MEDIA_END);
 		$sImportImportedFiles			= array();
-		$sRemoveTokens					= array(self::T_NULL, self::T_COMMENT);
+		$sRemoveTokens					= array_filter(array(self::T_NULL, ($sRemoveComments ? self::T_COMMENT : false)));
 		
 		/*
 		 * Import @import at-rules.
@@ -960,7 +962,10 @@ class CssMin
 					{
 					$tokens[$i][2] = preg_replace($rCompressUnitValues1, $rCompressUnitValues1R, $tokens[$i][2]);
 					$tokens[$i][2] = preg_replace($rCompressUnitValues2, $rCompressUnitValues2R, $tokens[$i][2]);
-					if ($tokens[$i][2] == "0 0 0 0" || $tokens[$i][2] == "0 0 0" || $tokens[$i][2] == "0 0") {$tokens[$i][2] = "0";}
+					if (strtolower($tokens[$i][1]) != "background-position")
+						{
+						if ($tokens[$i][2] == "0 0 0 0" || $tokens[$i][2] == "0 0 0" || $tokens[$i][2] == "0 0") {$tokens[$i][2] = "0";}
+						}
 					}
 				/*
 				 * Convert RGB color values if the configuration option "convert-rgb-color-values" is enabled.
@@ -1095,6 +1100,10 @@ class CssMin
 			elseif (in_array($tokens[$i][0], array(self::T_DECLARATIONS_END, self::T_AT_MEDIA_END, self::T_AT_FONT_FACE_END, self::T_AT_PAGE_END)))
 				{
 				$r .= "}";
+				}
+			elseif ($tokens[$i][0] == self::T_COMMENT)
+				{
+				$r .= "\n" . $tokens[$i][1] . "\n";
 				}
 			else
 				{
@@ -1600,7 +1609,7 @@ class CssMin
 				elseif ($c == ":" && $currentState == self::T_DECLARATION)
 					{
 					// Fix for Internet Explorer declaration filter as the declaration value conrains a colon (Ex.: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);)
-					if (strtolower($property) == "filter" && strtolower(trim($buffer)) == "progid:")
+					if (strpos(strtolower($property), "filter") !== false && strtolower(trim($buffer)) == "progid:")
 						{
 						continue;
 						}
@@ -1635,8 +1644,7 @@ class CssMin
 		{
 		// Calculate the value for Internet Explorer filter statement
 		$ieValue = (int) ((float) $value * 100);
-		$r  = "-moz-opacity:" . $value . ";";						// Firefox < 3.5
-		$r .= "-ms-filter: \"alpha(opacity=" . $ieValue . ")\";";	// Internet Explorer 8
+		$r = "-ms-filter: \"alpha(opacity=" . $ieValue . ")\";";	// Internet Explorer 8
 		$r .= "filter: alpha(opacity=" . $ieValue . ");zoom:1;";	// Internet Explorer 4 - 7
 		return $r;
 		}
