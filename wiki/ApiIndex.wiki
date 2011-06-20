@@ -1,5 +1,0 @@
-#sidebar Sidebar
-
-= API Documentation ==
-
-The api documentation is under construction.
