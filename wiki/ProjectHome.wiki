@@ -1,0 +1,34 @@
+= What is !CssMin? =
+
+!CssMin is a css parser and minfier. It minifies css by removing unneeded whitespace character, comments, 
+empty blocks and empty declarations. In addition declaration values can get rewritten to shorter notation if 
+available. The minification is [Configuration configurable].
+
+!CssMin has some benefits. It supports the rewrite of [MinifierFilterVariables CSS Level 3 properties to their browser 
+specific counterparts] and is able to simulate [ConfigurationEmulateCss3Variables CSS Variables].
+
+ * [WhatsNewVersion30 What's new in Version 3.0]
+ * [http://code.google.com/p/cssmin/downloads/list Download Version 3.0]
+ * [MinifierConfiguration Configuration and Usage]
+
+= Requirements: =
+ * PHP 5.x
+
+= Syntax: =
+{{{
+string CssMin::minify(string $source [, array $filters = array()][, array $plugins = array()]);
+}}}
+
+== $source ==
+
+The source css as string.
+
+== array $filters ==
+The [MinifierConfiguration#array_$filters filter configuration] as array (optional).
+
+== array $plugins ==
+The [MinifierConfiguration#array_$plugins plugin configuration] as array (optional).
+
+== Configuration ==
+
+See: [MinifierConfiguration Configuration]
