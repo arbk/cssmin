@@ -5,7 +5,7 @@
 == Description ==
 This plugin compress the content of expresssion() declaration values.
  
-For compression [https://github.com/rgrove/jsmin-php/ !JSMin] is required and have to be already included or 
+For compression [https://github.com/rgrove/jsmin-php/ JSMin] is required and have to be already included or 
 loadable via [http://goo.gl/JrW54 autoloading]. 
  
 == Configuration: ==
