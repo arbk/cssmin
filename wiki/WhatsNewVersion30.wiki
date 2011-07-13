@@ -21,9 +21,10 @@ Minifier filter are used for pre-processing the array of tokens returned by the 
 called on every token of the array of token returned by the parser. Minifier filters are able to insert, edit and remove 
 tokens; minifier plugins not. Both are using return values for flow control of the minification process.
 
-=== Source and build version ===
-The build version is a single file containing every php file of the source as minified version. The source version 
-includes a autoload mechanism.
+=== Source, build and minified version ===
+The build version is a single file containing every php file of the source as combined version. The minified version is
+a minified containing every php file of the source as combined and minified version. The source version is the normal 
+source with autoload mechanism.
 
 == Variables now can get used as part of a declaration value ==
 {{{

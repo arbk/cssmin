@@ -82,9 +82,12 @@ $plugins = array
 
 See also: [MinifierPlugins Minifier plugins]
 
-== Example ==
+== Examples ==
 {{{
-// Create configuration arrays (optional) 
+// Simple minification WITHOUT filter or plugin configuration
+$result = CssMin::minify(file_get_contents("path/to/source.css"));
+
+// Minification WITH filter or plugin configuration 
 $filters = array(/*...*/);
 $plugins = array(/*...*/);
 // Minify via CssMin adapter function

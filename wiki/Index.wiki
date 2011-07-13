@@ -24,7 +24,7 @@ The filter configuration as array (optional). See [MinifierConfiguration#array_$
 === array $plugins ===
 The plugin configuration as array (optional). See: [MinifierConfiguration#array_$plugins Plugin Configuration]
 
-== Example ==
+== Examples ==
 {{{
 // Simple minification WITHOUT filter or plugin configuration
 $result = CssMin::minify(file_get_contents("path/to/source.css"));
