@@ -1,203 +1,95 @@
-#labels Featured
-= Configuration =
-== remove-empty-blocks ==
-Empty @media, @font-face and @page blocks will get removed.
+#sidebar Sidebar
 
-=== Example ===
+= Minifier configuration =
+
+== Syntax ==
 {{{
-@media print { }
+string CssMin::minify(string $source [, array $filters = array()][, array $plugins = array()]);
 }}}
+
+=== string $source ===
+The source css as string.
+
+=== array $filters ===
+The filter configuration as array (optional). The configuration array must use the name of the filter as key and as 
+value `true`, `false` or an array with configuration parameters getting passed to the filter.
+
+==== Example filter configuration ====
 {{{
-null
+$filters = array
+	(
+	"ImportImports"			=> array("BasePath" = "path/to/base"),
+	"RemoveComments"		=> true, 
+	"RemoveEmptyRulesets"		=> true,
+	"RemoveEmptyAtBlocks"		=> true,
+	"ConvertLevel3AtKeyframes"	=> array("RemoveSource" => false),
+	"ConvertLevel3Properties"	=> true,
+	"Variables"			=> true,
+	"RemoveLastDelarationSemiColon"	=> true
+	);
 }}}
-=== Defaults to: `true` ===
-----
 
-== remove-empty-rulesets ==
-Empty rulesets will get removed.
-=== Example ===
+==== Default filter configuration ====
 {{{
-div { }
+$filters = array
+	(
+	"ImportImports"			=> false,
+	"RemoveComments"		=> true, 
+	"RemoveEmptyRulesets"		=> true,
+	"RemoveEmptyAtBlocks"		=> true,
+	"ConvertLevel3AtKeyframes"	=> false,
+	"ConvertLevel3Properties"	=> false,
+	"Variables"			=> true,
+	"RemoveLastDelarationSemiColon"	=> true
+	);
 }}}
+
+See also: [MinifierFilters Minifier filters]
+
+=== array $plugins ===
+The plugin configuration as array (optional). The configuration array must use the name of the plugin as key and as 
+value `true`, `false` or an array with configuration parameters getting passed to the plugin.
+
+==== Example plugin configuration ====
 {{{
-null
+$plugins = array
+	(
+	"Variables"			=> true,
+	"ConvertFontWeight"		=> true,
+	"ConvertHslColors"		=> true,
+	"ConvertRgbColors"		=> true,
+	"ConvertNamedColors"		=> true,
+	"CompressColorValues"		=> true,
+	"CompressUnitValues"		=> true,
+	"CompressExpressionValues"	=> true
+	);
 }}}
-=== Defaults to: `true` ===
-----
 
-== remove-last-semicolons ==
-The last semicolon of a declaration of a ruleset or @font-face or @page block will get removed.
-=== Example ===
+==== Default plugin configuration ====
 {{{
-div
-	{
-	color: black;
-	width: 100%;
-	}
+$plugins = array
+	(
+	"Variables"			=> true,
+	"ConvertFontWeight"		=> false,
+	"ConvertHslColors"		=> false,
+	"ConvertRgbColors"		=> false,
+	"ConvertNamedColors"		=> false,
+	"CompressColorValues"		=> false,
+	"CompressUnitValues"		=> false,
+	"CompressExpressionValues"	=> false
+	);
 }}}
+
+See also: [MinifierPlugins Minifier plugins]
+
+== Example ==
 {{{
-div{color:black;width:100%}
+// Create configuration arrays (optional) 
+$filters = array(/*...*/);
+$plugins = array(/*...*/);
+// Minify via CssMin adapter function
+$result = CssMin::minify(file_get_contents("path/to/source.css"), $filters, $plugins);
+// Minify via CssMinifier class
+$minifier = new CssMinifier(file_get_contents("path/to/source.css"), $filters, $plugins);
+$result = $minifier->getMinified();
 }}}
-=== Defaults to: `true` ===
-----
-
-== remove-comments ==
-Remove comments. If set to `false` the minified output will include comments.
-=== Defaults to: `true` ===
-----
-
-== convert-css3-properties ==
-CSS3 properties will get translated to their browser specific counterparts.
-
-*Version 2.0.1 supportes:* 
- * border-radius
- * border-top-left-radius
- * border-top-right-radius
- * border-bottom-right-radius
- * border-bottom-left-radius
- * box-shadow
- * opacity
- * text-shadow
- * white-space: pre-wrap
-
-*Version 2.0.2 supports:*
-See: [WhatsNewVersion202 Whats new in Version 2.0.2]
-
-=== Example ===
-{{{
-div {border-radius: 1em;}
-}}}
-{{{
-div{-moz-border-radius:1em;-webkit-border-radius:1em;-khtml-border-radius:1em;border-radius:1em;}
-}}}
-=== Defaults to: `false` ===
-----
-
-== convert-font-weight-values (new in v2.0.2) ==
-Convert font-weight values to numeric representation.
-=== Example ===
-{{{
-font-weight: bold
-}}}
-{{{
-font-weight:700
-}}}
-=== Defaults to: `false` ===
-----
-
-== convert-named-color-values (new in v2.0.2) ==
-Convert named color values to hexadecimal notation. Supported color names are:
- * [http://www.w3.org/TR/REC-html40/types.html#h-6.5 HTML 4.01 web colors]
- * [http://en.wikipedia.org/wiki/X11_color_names X11 color names supported by CSS Level 3]
- * [http://www.w3.org/TR/2003/WD-CSS21-20030915/syndata.html#color-units The color "orange" as defined in CSS Level 2.1]
- 
-=== Example ===
-{{{
-border: 1px solid red
-}}}
-{{{
-border: 1px solid f00
-}}}
-=== Defaults to: `false` ===
-----
-
-== convert-hsl-color-values (new in v2.0.2) ==
-Convert HSL color values to hexadecimal notation: 
-
-=== Example ===
-{{{
-hsl(232,36%,48%)
-}}}
-{{{
-#4e5aa7
-}}}
-=== Defaults to: `false` ===
-----
-
-
-== convert-rgb-color-values (new in v2.0.2) ==
-Convert RGB color values to hexadecimal notation: 
-
-=== Example ===
-{{{
-rgb(200,60%,5)
-}}}
-{{{
-#c89905
-}}}
-=== Defaults to: `false` ===
-----
-
-== convert-color-values (deprecated in v2.0.2) ==
-Convert RGB color values to hexadecimal notation: 
-
-=== Example ===
-{{{
-rgb(200,60%,5)
-}}}
-{{{
-#c89905
-}}}
-=== Defaults to: `false` ===
-----
-
-== compress-color-values ==
-If set to `true` hex colors will get compressed.
-=== Example ===
-{{{
-#aabbcc
-}}}
-{{{
-#abc
-}}}
-=== Defaults to: `false` ===
-----
-
-== compress-unit-values ==
-If set to `true` unit values will get compressed.
-=== Example ===
-{{{
-0px
-0.5px
-0 0 0 0
-}}}
-{{{
-0
-.5px
-0
-}}}
-=== Defaults to: `false` ===
-----
-
-== import-imports ==
-If set to `true` stylesheets included with the at-rule @import will get parsed and inserted into the current stylesheet. Imported stylesheets are allowed to have their own @import at-rules.
-
-You have to set the configuration option `import-base-path` to a valid path. All paths defined in @import at-rules will get interpreted based on this base path.
-
-If there are media type defined in the @import at-rule there will be alot of processing to match the browsers behavior.
-
-1. The imported tokens wil get wrapped into a @media at-rule block. @font-face, @media and @page at-rule blocks and other at-rule statements will get excluded of the wraping.
-
-2. Additional @media at-rule blocks with media types not defined in the @import at-rule have to get removed. Browsers ignore @media at-rule block with media types incompatible to the media types defined in the @import at-rule.
-
-3. Also @import rules require special treatment. If a included @import at-rule has no media type or only the "all" media type defined the media type of the @import at-rule will get set to the ones defined in the parent @import at-rule. Media types not defined in the parent @import at-rule will get filtered. @import at-rule with not matching media types will get removed.
-
-4. If a @media at-rule block is defined the same media type as the @import at-rule the @media at-rule block will get removed preserving the rulesets.
-
-=== Defaults to: `false` ===
-----
-
-== import-base-path ==
-Its required to set this setting for the configuration option `import-imports`. All paths defined in @import at-rules will get interpreted based on this base path.
-=== Defaults to: `null` ===
-----
-
-== import-remove-invalid ==
-If set to `true` (and `import-imports` is set to `true`) every @import at-rule will get removed if import stylesheet was not found.
-=== Defaults to: `false` ===
-----
-
-== emulate-css3-variables ==
-See: [ConfigurationEmulateCss3Variables Configuration: emulate-css3-variables]
-=== Defaults to: `true` ===
-----

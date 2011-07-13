@@ -1,6 +1,0 @@
-#labels Featured
-#sidebar Sidebar
-
-Hurray... no known issues. 
-
-If you found an bug or want to request a feature please submit an [http://code.google.com/p/cssmin/issues/list Issue].

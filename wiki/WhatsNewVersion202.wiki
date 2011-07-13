@@ -1,3 +1,5 @@
+#sidebar Sidebar
+
 = Whats new in Version 2.0.2 =
 
 == Compatibility changes to Version 2.0.1 ==
@@ -226,3 +228,45 @@ Supports now:
  * word-wrap
  * writing-mode
  * zoom
+ 
+ = Syntax: =
+== Minification == 
+{{{
+string CssMin::minify(string $css, array [$config])
+}}}
+== Parse only == 
+{{{
+array CssMin::parse(string $css)
+}}}
+
+== $config ==
+
+See: [Configuration]
+
+= Examples: =
+{{{
+// Simple example using the default configuration
+$css = file_get_contents("path/to/source.css");
+$css = CssMin::minify($css);
+file_put_contents("path/to/target.css", $css);
+}}}
+
+{{{
+// Example with full configuration
+$css = file_get_contents("path/to/source.css");
+$css = CssMin::minify($css, array
+	(
+	"remove-empty-blocks"		=> true,
+	"remove-empty-rulesets"		=> true,
+	"remove-last-semicolons"	=> true,
+	"convert-css3-properties"	=> true,
+	"convert-font-weight-values"	=> true, // new in v2.0.2
+	"convert-named-color-values"	=> true, // new in v2.0.2
+	"convert-hsl-color-values"	=> true, // new in v2.0.2
+	"convert-rgb-color-values"	=> true, // new in v2.0.2; was "convert-color-values" in v2.0.1
+	"compress-color-values"		=> true,
+	"compress-unit-values"		=> true,
+	"emulate-css3-variables"	=> true
+	));
+file_put_contents("path/to/target.css", $css);
+}}}
