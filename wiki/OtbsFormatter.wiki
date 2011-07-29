@@ -30,5 +30,5 @@ $tokens = CssMin::parse($source);
 // Create a instance of the formatter; set the indent string to TAB and the declaration value padding to 32
 $formatter = new CssOtbsFormatter($tokens, "\t", 32);
 // Print the formatted source
-echo "<pre>" . (string) $formatter . "</pre>;
+echo "<pre>" . (string) $formatter . "</pre>";
 }}}
