@@ -3,7 +3,7 @@
 = !SortRulesetProperties minifier filter =
 
 == Description ==
-This filter will sort ruleset properties by their name.
+This filter will sort ruleset properties by their name. This will slightly improve the compression ratio as for example of the [http://httpd.apache.org/docs/2.0/mod/mod_deflate.html Apache Module mod_deflate].
 
 *Warning: Because of the nature of this filter, this filter may change the lexical meaning of the stylesheet and may break some browser hacks.* 
 
@@ -16,7 +16,7 @@ $filters = array
 	);
 }}} 
 
-This filter was created by: Rowan Beentje [http://assanka.net Assanka].
+This filter was created by: Rowan Beentje - [http://assanka.net Assanka <http://assanka.net>].
  
 == Configuration: ==
  * `true` / `false`
@@ -31,7 +31,7 @@ div.my
 	width:		240px;
 	padding:	0.25em;
 	color:		black;
-	border:		1px solid silver;
+	border:		1px solid black;
 	}
 }}}
 
