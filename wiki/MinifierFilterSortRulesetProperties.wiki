@@ -1,0 +1,41 @@
+#sidebar Sidebar
+
+= !SortRulesetProperties minifier filter =
+
+== Description ==
+This filter will sort ruleset properties by their name.
+
+*Warning: Because of the nature of this filter, this filter may change the lexical meaning of the stylesheet and may break some browser hacks.* 
+
+To activate this filter you have to extend the minifier filter configuration:
+{{{
+$filters = array
+	(
+	/* ... your normal filter configuration ... */
+	"SortRulesetProperties" => true
+	);
+}}} 
+
+This filter was created by: Rowan Beentje [http://assanka.net Assanka].
+ 
+== Configuration: ==
+ * `true` / `false`
+ 
+== Defaults: ==
+ * `false`
+
+== Before: ==
+{{{
+div.my
+	{
+	width:		240px;
+	padding:	0.25em;
+	color:		black;
+	border:		1px solid silver;
+	}
+}}}
+
+== After: ==
+{{{
+div.my{border:1px solid #000;color:#000;padding:.25em;width:240px}
+}}}

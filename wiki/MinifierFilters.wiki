@@ -6,5 +6,7 @@
  * [MinifierFilterRemoveComments RemoveComments]
  * [MinifierFilterRemoveEmptyRulesets RemoveEmptyRulesets]
  * [MinifierFilterRemoveEmptyAtBlocks RemoveEmptyAtBlocks]
+ * [MinifierFilterConvertLevel3AtKeyframes ConvertLevel3AtKeyframes]
  * [MinifierFilterConvertLevel3Properties ConvertLevel3Properties]
  * [MinifierFilterVariables Variables]
+ * [MinifierFilterSortRulesetProperties SortRulesetProperties] (3rd Party)

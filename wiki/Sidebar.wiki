@@ -1,4 +1,5 @@
- * [WhatsNewVersion30 What's new]
+ * [WhatsNewVersion301 What's new]
+    * [WhatsNewVersion301 Version 3.0.1]
     * [WhatsNewVersion30 Version 3.0]
     * [WhatsNewVersion202 Version 2.0.2]
     * [WhatsNewVersion20 Version 2.0]
@@ -12,6 +13,7 @@
        * [MinifierFilterConvertLevel3AtKeyframes ConvertLevel3AtKeyframes]
        * [MinifierFilterConvertLevel3Properties ConvertLevel3Properties]
        * [MinifierFilterVariables Variables]
+       * [MinifierFilterSortRulesetProperties SortRulesetProperties] (3rd Party)
     * [MinifierPlugins Plugins]
        * [MinifierPluginVariables Variables]
        * [MinifierPluginConvertFontWeight ConvertFontWeight]

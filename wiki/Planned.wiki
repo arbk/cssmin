@@ -2,8 +2,10 @@
 == Better compatibility to CSS 2.1 4.2 Rules for handling parsing errors ==
 See: [http://www.w3.org/TR/CSS2/syndata.html#parsing-errors CSS 2.1 4.2 Rules for handling parsing errors]
 
-== CSS Level 3 media queries ==
+== CSS Level 3 namespaces ==
+Parser for [http://dev.w3.org/csswg/css3-namespace/ CSS Level 3 namespaces]
 
+== CSS Level 3 media queries ==
 Parser for [http://www.w3.org/TR/css3-mediaqueries/ CSS Level 3 media queries]
 
 == Compress 2 matching pairs of horizontal and vertical units to 1 pair ==
