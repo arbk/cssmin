@@ -3,7 +3,7 @@ CssMin
 
 **A (simple) css minifier with benefits**  
 
-Version 3.0.1.1  
+Version 3.0.1.2  
 Licensed under the MIT License  
 
 Copyright (c) 2011 Joe Scylla <joe.scylla@gmail.com>  
